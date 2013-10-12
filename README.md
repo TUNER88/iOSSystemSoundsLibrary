@@ -1,12 +1,9 @@
 iOSSystemSoundsLibrary
 ======================
 - List of all system sounds used in iOS
-- Run project on your deviece to test all available system sounds
+- Run project on your iOS device to test all available system sounds
 - iOS Simulator does NOT play system sounds
-
-
-
-
+- [Screenshot](#screenshot)
 
 Play sound using SystemSoundID
 -------------------------
@@ -22,10 +19,6 @@ SystemSoundID soundID;
 AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)fileURL,&soundID);
 AudioServicesPlaySystemSound(soundID);
 ```
-
-
-
-
 
 List of SystemSoundIDs
 -------------------------
@@ -766,3 +759,7 @@ List of all system audio files in iOS 7.0.2
 /System/Library/Audio/UISounds/vc~invitation-accepted.caf
 /System/Library/Audio/UISounds/vc~ringing.caf
 ```
+
+Screenshot
+-------------------------
+![screenshot](https://raw.github.com/TUNER88/iOSSystemSoundsLibrary/readme/img/screenshot.png)
