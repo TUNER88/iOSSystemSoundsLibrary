@@ -5,7 +5,7 @@ iOSSystemSoundsLibrary
 - iOS Simulator does NOT play system sounds
 - [Screenshot](#screenshot)
 
-##How to use
+##How to use un your project:
 - add ``AudioToolbox.framework`` to your project
 - import ``#import <AudioToolbox/AudioToolbox.h>``
 
