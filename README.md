@@ -1,8 +1,8 @@
 iOSSystemSoundsLibrary
 ======================
-List of all system sounds used in iOS
-
-
+- List of all system sounds used in iOS
+- Run project on your deviece to test all available system sounds
+- iOS Simulator does NOT play system sounds
 
 
 
@@ -665,7 +665,7 @@ List of SystemSoundIDs
 List of all system audio files in iOS 7.0.2
 -------------------------------------------
 ```
-	/System/Library/Audio/UISounds/Modern/airdrop_invite.caf
+/System/Library/Audio/UISounds/Modern/airdrop_invite.caf
 /System/Library/Audio/UISounds/Modern/calendar_alert_chord.caf
 /System/Library/Audio/UISounds/Modern/camera_shutter_burst.caf
 /System/Library/Audio/UISounds/Modern/camera_shutter_burst_begin.caf
