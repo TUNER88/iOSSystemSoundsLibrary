@@ -4,8 +4,26 @@ List of all system sounds used in iOS
 
 
 
-How to use system sounds?
+
+
+
+
+Play sound using SystemSoundID
 -------------------------
+```objective-c
+AudioServicesPlaySystemSound (1003); // SMSReceived (see SystemSoundID below)
+```
+
+Play sound using file url
+-------------------------
+```objective-c
+NSURL *fileURL = [NSURL URLWithString:@"/System/Library/Audio/UISounds/ReceivedMessage.caf"]; // see list below
+SystemSoundID soundID;
+AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)fileURL,&soundID);
+AudioServicesPlaySystemSound(soundID);
+```
+
+
 
 
 
@@ -13,7 +31,7 @@ List of SystemSoundIDs
 -------------------------
 <table>
 <thead><tr>
-<th>Sound ID</th>
+<th>SystemSoundID</th>
 <th>File name</th>
 <th>Category</th>
 </tr></thead><tbody>
@@ -641,4 +659,110 @@ List of SystemSoundIDs
 	<td>4095</td>
 	<td>-</td>
 	<td>Vibrate</td>
-</tr></tbody><tfoot></tfoot></table>
+</tr></tbody></table>
+
+
+List of all system audio files in iOS 7.0.2
+-------------------------------------------
+```
+	/System/Library/Audio/UISounds/Modern/airdrop_invite.caf
+/System/Library/Audio/UISounds/Modern/calendar_alert_chord.caf
+/System/Library/Audio/UISounds/Modern/camera_shutter_burst.caf
+/System/Library/Audio/UISounds/Modern/camera_shutter_burst_begin.caf
+/System/Library/Audio/UISounds/Modern/camera_shutter_burst_end.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_aurora.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_bamboo.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_circles.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_complete.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_hello.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_input.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_keys.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_note.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_popcorn.caf
+/System/Library/Audio/UISounds/Modern/sms_alert_synth.caf
+/System/Library/Audio/UISounds/New/Anticipate.caf
+/System/Library/Audio/UISounds/New/Bloom.caf
+/System/Library/Audio/UISounds/New/Calypso.caf
+/System/Library/Audio/UISounds/New/Choo_Choo.caf
+/System/Library/Audio/UISounds/New/Descent.caf
+/System/Library/Audio/UISounds/New/Fanfare.caf
+/System/Library/Audio/UISounds/New/Ladder.caf
+/System/Library/Audio/UISounds/New/Minuet.caf
+/System/Library/Audio/UISounds/New/News_Flash.caf
+/System/Library/Audio/UISounds/New/Noir.caf
+/System/Library/Audio/UISounds/New/Sherwood_Forest.caf
+/System/Library/Audio/UISounds/New/Spell.caf
+/System/Library/Audio/UISounds/New/Suspense.caf
+/System/Library/Audio/UISounds/New/Telegraph.caf
+/System/Library/Audio/UISounds/New/Tiptoes.caf
+/System/Library/Audio/UISounds/New/Typewriters.caf
+/System/Library/Audio/UISounds/New/Update.caf
+/System/Library/Audio/UISounds/ReceivedMessage.caf
+/System/Library/Audio/UISounds/RingerChanged.caf
+/System/Library/Audio/UISounds/SIMToolkitCallDropped.caf
+/System/Library/Audio/UISounds/SIMToolkitGeneralBeep.caf
+/System/Library/Audio/UISounds/SIMToolkitNegativeACK.caf
+/System/Library/Audio/UISounds/SIMToolkitPositiveACK.caf
+/System/Library/Audio/UISounds/SIMToolkitSMS.caf
+/System/Library/Audio/UISounds/SentMessage.caf
+/System/Library/Audio/UISounds/Swish.caf
+/System/Library/Audio/UISounds/Tink.caf
+/System/Library/Audio/UISounds/Tock.caf
+/System/Library/Audio/UISounds/Voicemail.caf
+/System/Library/Audio/UISounds/alarm.caf
+/System/Library/Audio/UISounds/beep-beep.caf
+/System/Library/Audio/UISounds/begin_record.caf
+/System/Library/Audio/UISounds/begin_video_record.caf
+/System/Library/Audio/UISounds/ct-busy.caf
+/System/Library/Audio/UISounds/ct-call-waiting.caf
+/System/Library/Audio/UISounds/ct-congestion.caf
+/System/Library/Audio/UISounds/ct-error.caf
+/System/Library/Audio/UISounds/ct-keytone2.caf
+/System/Library/Audio/UISounds/ct-path-ack.caf
+/System/Library/Audio/UISounds/dtmf-0.caf
+/System/Library/Audio/UISounds/dtmf-1.caf
+/System/Library/Audio/UISounds/dtmf-2.caf
+/System/Library/Audio/UISounds/dtmf-3.caf
+/System/Library/Audio/UISounds/dtmf-4.caf
+/System/Library/Audio/UISounds/dtmf-5.caf
+/System/Library/Audio/UISounds/dtmf-6.caf
+/System/Library/Audio/UISounds/dtmf-7.caf
+/System/Library/Audio/UISounds/dtmf-8.caf
+/System/Library/Audio/UISounds/dtmf-9.caf
+/System/Library/Audio/UISounds/dtmf-pound.caf
+/System/Library/Audio/UISounds/dtmf-star.caf
+/System/Library/Audio/UISounds/end_record.caf
+/System/Library/Audio/UISounds/end_video_record.caf
+/System/Library/Audio/UISounds/jbl_ambiguous.caf
+/System/Library/Audio/UISounds/jbl_begin.caf
+/System/Library/Audio/UISounds/jbl_cancel.caf
+/System/Library/Audio/UISounds/jbl_confirm.caf
+/System/Library/Audio/UISounds/jbl_no_match.caf
+/System/Library/Audio/UISounds/lock.caf
+/System/Library/Audio/UISounds/long_low_short_high.caf
+/System/Library/Audio/UISounds/low_power.caf
+/System/Library/Audio/UISounds/mail-sent.caf
+/System/Library/Audio/UISounds/middle_9_short_double_low.caf
+/System/Library/Audio/UISounds/new-mail.caf
+/System/Library/Audio/UISounds/photoShutter.caf
+/System/Library/Audio/UISounds/shake.caf
+/System/Library/Audio/UISounds/short_double_high.caf
+/System/Library/Audio/UISounds/short_double_low.caf
+/System/Library/Audio/UISounds/short_low_high.caf
+/System/Library/Audio/UISounds/sms-received1.caf
+/System/Library/Audio/UISounds/sms-received2.caf
+/System/Library/Audio/UISounds/sms-received3.caf
+/System/Library/Audio/UISounds/sms-received4.caf
+/System/Library/Audio/UISounds/sms-received5.caf
+/System/Library/Audio/UISounds/sms-received6.caf
+/System/Library/Audio/UISounds/sq_alarm.caf
+/System/Library/Audio/UISounds/sq_beep-beep.caf
+/System/Library/Audio/UISounds/sq_lock.caf
+/System/Library/Audio/UISounds/sq_tock.caf
+/System/Library/Audio/UISounds/tweet_sent.caf
+/System/Library/Audio/UISounds/unlock.caf
+/System/Library/Audio/UISounds/ussd.caf
+/System/Library/Audio/UISounds/vc~ended.caf
+/System/Library/Audio/UISounds/vc~invitation-accepted.caf
+/System/Library/Audio/UISounds/vc~ringing.caf
+```
