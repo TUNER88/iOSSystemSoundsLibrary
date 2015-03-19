@@ -82,7 +82,10 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[audioFileList objectAtIndex:indexPath.row] lastPathComponent];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[audioFileList objectAtIndex:indexPath.row],&soundID);
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%d)",[[audioFileList objectAtIndex:indexPath.row] lastPathComponent],soundID];
     return cell;
 }
 
@@ -92,7 +95,7 @@
     AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[audioFileList objectAtIndex:indexPath.row],&soundID);
     AudioServicesPlaySystemSound(soundID);
     
-    NSLog(@"File url: %@", [[audioFileList objectAtIndex:indexPath.row] description]);
+    NSLog(@"ID:(%d) File url: %@",soundID, [[audioFileList objectAtIndex:indexPath.row] description]);
 }
 
 @end
