@@ -10,29 +10,29 @@
 	<string>SystemSoundLibrary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4076EDE7-9392-49A9-8C59-9BAC159B5168</key>
-		<string>https://github.com/TUNER88/iOSSystemSoundsLibrary.git</string>
+		<key>52BDAB52DF1AF470428940B56B2D425D477BAB3E</key>
+		<string>https://github.com/federicocappelli/iOSSystemSoundsLibrary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SystemSoundLibrary.xcodeproj/project.xcworkspace</string>
+	<string>SystemSoundLibrary.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4076EDE7-9392-49A9-8C59-9BAC159B5168</key>
+		<key>52BDAB52DF1AF470428940B56B2D425D477BAB3E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/TUNER88/iOSSystemSoundsLibrary.git</string>
+	<string>https://github.com/federicocappelli/iOSSystemSoundsLibrary.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4076EDE7-9392-49A9-8C59-9BAC159B5168</string>
+	<string>52BDAB52DF1AF470428940B56B2D425D477BAB3E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4076EDE7-9392-49A9-8C59-9BAC159B5168</string>
+			<string>52BDAB52DF1AF470428940B56B2D425D477BAB3E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iOSSystemSoundsLibrary</string>
 		</dict>
