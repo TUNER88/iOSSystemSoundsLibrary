@@ -82,7 +82,11 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[audioFileList objectAtIndex:indexPath.row] lastPathComponent];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)[audioFileList objectAtIndex:indexPath.row],&soundID);
+    
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d: %@",soundID, [[audioFileList objectAtIndex:indexPath.row] lastPathComponent]];
     return cell;
 }
 
