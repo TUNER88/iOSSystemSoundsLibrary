@@ -1,0 +1,55 @@
+name: Swift package
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: swift build + swift test (macOS)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Check generated Swift catalog is up to date
+        run: python3 scripts/generate_swift.py --check
+
+      - name: Build
+        run: swift build
+
+      - name: Test
+        run: swift test
+
+  platforms:
+    name: Build for ${{ matrix.destination }}
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        destination:
+          - generic/platform=iOS Simulator
+          - generic/platform=tvOS Simulator
+          - generic/platform=visionOS Simulator
+          - generic/platform=macOS,variant=Mac Catalyst
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # The repository root also contains the legacy SystemSoundLibrary.xcodeproj, so
+      # build the package from a copy that only contains the package files.
+      - name: Build package
+        run: |
+          set -o pipefail
+          PKG="$RUNNER_TEMP/package"
+          mkdir -p "$PKG"
+          cp -R Package.swift Sources Tests "$PKG/"
+          cd "$PKG"
+          xcodebuild build -scheme SystemSoundsLibrary -destination '${{ matrix.destination }}' CODE_SIGNING_ALLOWED=NO -quiet
