@@ -1,0 +1,29 @@
+version: 2
+updates:
+  # GitHub Actions are pinned to commit SHAs; Dependabot updates the SHA and the version comment.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Berlin
+    commit-message:
+      prefix: ci
+    groups:
+      github-actions:
+        patterns: ["*"]
+
+  # Swift Package Manager (Package.swift). The package has no dependencies yet;
+  # this keeps future ones up to date.
+  - package-ecosystem: swift
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Berlin
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+    groups:
+      swift-packages:
+        patterns: ["*"]
