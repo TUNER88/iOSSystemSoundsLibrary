@@ -17,6 +17,7 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 - [List of SystemSoundIDs](#list-of-systemsoundids)
 - [List of all system audio files in iOS 7.0.2](#list-of-all-system-audio-files-in-ios-702)
 - [FAQ](#faq)
+- [Compatibility notes](#compatibility-notes)
 - [Related projects](#related-projects)
 - [Screenshot](#screenshot)
 - [License](#license)
@@ -337,6 +338,39 @@ The iOS Simulator does not play system sounds, so run the demo on a real device.
 ### Can I use the SystemSoundID returned by `AudioServicesCreateSystemSoundID`?
 
 Only within the current run of your app. IDs created by `AudioServicesCreateSystemSoundID` are generated at runtime and are **not stable**, so don't store or hard-code them. Use the predefined IDs in the table above or a file URL instead. See [#9](https://github.com/TUNER88/iOSSystemSoundsLibrary/pull/9).
+
+## Compatibility notes
+
+Things to know when you use system sounds on current Apple platforms (iOS 17 and later).
+
+### Volume on iOS 27
+
+System sounds follow the ringer/alert volume, not the media volume (see the [FAQ](#faq)). According to press reports, iOS 27 adds separate volume settings for ringtones, alarms, timers, and alerts and system sounds ([The Verge](https://www.theverge.com/news/992408/ios-27-release-date-features)). We haven't verified yet how this affects `AudioServicesPlaySystemSound`, so test on a device. If your sound needs to follow the media volume, bundle it and play it with [`AVAudioPlayer`](https://developer.apple.com/documentation/avfaudio/avaudioplayer).
+
+### watchOS
+
+System Sound Services (`AudioServicesPlaySystemSound` and friends) is not available on watchOS. Use [`WKInterfaceDevice.play(_:)`](<https://developer.apple.com/documentation/watchkit/wkinterfacedevice/play(_:)>) for haptic feedback on Apple Watch. `AudioServicesPlaySystemSound` is available on iOS, iPadOS, Mac Catalyst, macOS, tvOS and visionOS ([docs](<https://developer.apple.com/documentation/audiotoolbox/audioservicesplaysystemsound(_:)>)), but the IDs and files in this list are iOS-specific.
+
+### Haptics instead of vibration IDs
+
+For tactile feedback, prefer the haptics APIs over `kSystemSoundID_Vibrate` or vibration IDs:
+
+- [`UIFeedbackGenerator`](https://developer.apple.com/documentation/uikit/uifeedbackgenerator) subclasses (impact, selection, notification, canvas) in UIKit
+- [Core Haptics](https://developer.apple.com/documentation/corehaptics) for custom haptic and audio patterns
+- [`.sensoryFeedback(_:trigger:)`](<https://developer.apple.com/documentation/swiftui/view/sensoryfeedback(_:trigger:)>) in SwiftUI (iOS 17+, macOS 14+, watchOS 10+)
+
+### Keyboard clicks
+
+To play the standard keyboard click in a custom input view, use [`UIDevice.playInputClick()`](<https://developer.apple.com/documentation/uikit/uidevice/playinputclick()>) and adopt [`UIInputViewAudioFeedback`](https://developer.apple.com/documentation/uikit/uiinputviewaudiofeedback) instead of hard-coding IDs like 1104. The click respects the user's keyboard click setting.
+
+### Notification sounds
+
+These IDs and files can't be used as notification sounds. [`UNNotificationSound`](https://developer.apple.com/documentation/usernotifications/unnotificationsound) only plays files from your app bundle or your app container's `Library/Sounds` directory. Critical alerts ([`defaultCritical`](https://developer.apple.com/documentation/usernotifications/unnotificationsound/defaultcritical)) need a special entitlement from Apple.
+
+### App Review
+
+- `AudioServicesPlaySystemSound` and `AudioServicesPlayAlertSound` are public APIs. The numeric IDs and file names in this list are not documented by Apple, and Apple notes that system-supplied alert and UI sounds "are not available to your iOS application" ([docs](<https://developer.apple.com/documentation/audiotoolbox/audioservicesplayalertsound(_:)>)). Treat them as unofficial and test on every iOS version you support.
+- [App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/#software-requirements) 2.5.1 (public APIs only) and 2.5.2 (apps may not read or write data outside their container) apply. The demo app enumerates `/System/Library/Audio/UISounds`, which is fine for a developer tool. In a shipping app, prefer fixed IDs over reading system directories.
 
 ## Related projects
 
