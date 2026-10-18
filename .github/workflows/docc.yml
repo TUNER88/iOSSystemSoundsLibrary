@@ -1,0 +1,32 @@
+name: Documentation
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  docbuild:
+    name: Build DocC documentation
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Emit symbol graph
+        run: |
+          mkdir -p .build/symbol-graphs
+          swift build --target SystemSoundsLibrary \
+            -Xswiftc -emit-symbol-graph \
+            -Xswiftc -emit-symbol-graph-dir -Xswiftc .build/symbol-graphs
+
+      - name: Convert documentation
+        run: |
+          xcrun docc convert Sources/SystemSoundsLibrary/SystemSoundsLibrary.docc \
+            --fallback-display-name SystemSoundsLibrary \
+            --fallback-bundle-identifier com.github.tuner88.SystemSoundsLibrary \
+            --additional-symbol-graph-dir .build/symbol-graphs \
+            --output-path .build/SystemSoundsLibrary.doccarchive \
+            --warnings-as-errors
