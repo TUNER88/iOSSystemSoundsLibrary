@@ -1,0 +1,4 @@
+{
+  // The README has long code lines, table rows and file paths, so don't enforce a line length.
+  "MD013": false
+}
