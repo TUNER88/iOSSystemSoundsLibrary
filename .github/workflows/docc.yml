@@ -30,3 +30,12 @@ jobs:
             --additional-symbol-graph-dir .build/symbol-graphs \
             --output-path .build/SystemSoundsLibrary.doccarchive \
             --warnings-as-errors
+
+      - name: Check that symbols were documented
+        run: |
+          ls .build/symbol-graphs
+          data=.build/SystemSoundsLibrary.doccarchive/data/documentation/systemsoundslibrary
+          for page in systemsound systemsoundplayer filesound gettingstarted soundsorhaptics appreview; do
+            test -f "$data/$page.json" || { echo "::error::Missing documentation page $page"; exit 1; }
+          done
+          echo "Documented pages: $(find "$data" -name '*.json' | wc -l)"
