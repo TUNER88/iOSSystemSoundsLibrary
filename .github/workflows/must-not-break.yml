@@ -1,0 +1,25 @@
+name: Must not break
+
+# Many Stack Overflow answers and other sites link to this repository's README
+# anchors, quote the demo app and use raw file URLs. This check fails if any of
+# them would break. See scripts/check_must_not_break.py for the list.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Anchors, paths and preserved content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check
+        run: python3 scripts/check_must_not_break.py --online
