@@ -1,0 +1,74 @@
+name: Publish documentation
+
+# Builds the DocC documentation for static hosting and deploys it to GitHub Pages:
+# https://tuner88.github.io/iOSSystemSoundsLibrary/documentation/systemsoundslibrary/
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build DocC site
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Emit symbol graph
+        run: |
+          mkdir -p .build/symbol-graphs
+          swift build --target SystemSoundsLibrary \
+            -Xswiftc -emit-symbol-graph \
+            -Xswiftc -emit-symbol-graph-dir -Xswiftc .build/symbol-graphs
+
+      - name: Convert documentation for static hosting
+        run: |
+          xcrun docc convert Sources/SystemSoundsLibrary/SystemSoundsLibrary.docc \
+            --fallback-display-name SystemSoundsLibrary \
+            --fallback-bundle-identifier com.github.tuner88.SystemSoundsLibrary \
+            --additional-symbol-graph-dir .build/symbol-graphs \
+            --transform-for-static-hosting \
+            --hosting-base-path iOSSystemSoundsLibrary \
+            --output-path .build/site
+          # The site root redirects to the package documentation.
+          cat > .build/site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <title>SystemSoundsLibrary documentation</title>
+            <meta http-equiv="refresh" content="0; url=documentation/systemsoundslibrary/">
+            <link rel="canonical" href="documentation/systemsoundslibrary/">
+          </head>
+          <body><a href="documentation/systemsoundslibrary/">SystemSoundsLibrary documentation</a></body>
+          </html>
+          HTML
+          test -f .build/site/documentation/systemsoundslibrary/index.html
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: .build/site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}documentation/systemsoundslibrary/
+    steps:
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
