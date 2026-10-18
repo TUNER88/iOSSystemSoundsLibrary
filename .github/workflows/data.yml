@@ -20,3 +20,6 @@ jobs:
           python3 -m venv .venv
           .venv/bin/pip install --quiet jsonschema==4.26.0
           .venv/bin/python scripts/validate_data.py
+
+      - name: Check generated README sections are up to date
+        run: python3 scripts/generate_readme.py --check
