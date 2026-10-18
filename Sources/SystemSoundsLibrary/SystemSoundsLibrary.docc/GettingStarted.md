@@ -9,7 +9,7 @@ In Xcode, choose **File > Add Package Dependencies…** and enter
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/TUNER88/iOSSystemSoundsLibrary", branch: "master"),
+    .package(url: "https://github.com/TUNER88/iOSSystemSoundsLibrary", from: "2.0.0"),
 ],
 targets: [
     .target(name: "MyApp", dependencies: [
