@@ -1,0 +1,27 @@
+name: Example app
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build SoundBrowser (iOS Simulator)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Show toolchain
+        run: xcodebuild -version
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project Examples/SoundBrowser/SoundBrowser.xcodeproj \
+            -scheme SoundBrowser \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO
