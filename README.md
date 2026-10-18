@@ -4,6 +4,7 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 
 - Run the demo project **on a real device** to hear all available system sounds. The iOS Simulator does not play system sounds.
 - See the [screenshot](#screenshot).
+- API documentation for the `SystemSoundsLibrary` Swift package: <https://tuner88.github.io/iOSSystemSoundsLibrary/documentation/systemsoundslibrary/>
 
 > [!NOTE]
 > Apple does not officially document these SystemSoundIDs or file names. The mappings below were collected on iOS 7 and **may differ, be missing, or be added on other iOS versions**. Always test on the iOS versions you support.
