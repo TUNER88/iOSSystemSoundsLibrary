@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "include-v-in-tag": false,
+  "include-component-in-tag": false,
+  "packages": {
+    ".": {
+      "package-name": "SystemSoundsLibrary",
+      "initial-version": "2.0.0",
+      "changelog-path": "CHANGELOG.md"
+    }
+  }
+}
