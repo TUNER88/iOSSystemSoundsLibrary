@@ -1,0 +1,44 @@
+name: Release
+
+# Opens and updates a release PR from Conventional Commits merged into master.
+# Merging that PR creates the SemVer tag (for example 2.0.0) and the GitHub Release.
+# See .github/RELEASING.md.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: release-please
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    name: release-please
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        id: release
+        with:
+          # A PAT or GitHub App token is needed so the release PR triggers the required CI checks.
+          # Without it, the GITHUB_TOKEN fallback still works, but CI must be started by hand.
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      - name: Warn if the release PR won't trigger CI
+        if: steps.release.outputs.prs_created == 'true' && env.HAS_TOKEN != 'true'
+        env:
+          HAS_TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN != '' }}
+        run: |
+          echo "::warning::The release PR was created with GITHUB_TOKEN, so CI doesn't run on it. Add a RELEASE_PLEASE_TOKEN secret, or close and reopen the release PR to start CI. See .github/RELEASING.md."
+
+      - name: Summary
+        if: steps.release.outputs.release_created == 'true'
+        run: echo "Released ${{ steps.release.outputs.tag_name }}" >> "$GITHUB_STEP_SUMMARY"

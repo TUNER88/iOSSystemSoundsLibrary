@@ -12,6 +12,7 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 ## Contents
 
 - [Usage](#usage)
+  - [Swift Package Manager](#swift-package-manager)
   - [Swift](#swift)
   - [SwiftUI](#swiftui)
   - [Objective-C](#objective-c)
@@ -30,6 +31,25 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 ## Usage
 
 All examples use the `AudioToolbox` framework (System Sound Services). It is linked automatically when you import it in a modern Xcode project.
+
+### Swift Package Manager
+
+The `SystemSoundsLibrary` package wraps these sounds in a typed Swift 6 API with availability information (iOS 15+, tvOS, visionOS, Mac Catalyst). Add it in Xcode with **File > Add Package Dependencies…**, or in `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/TUNER88/iOSSystemSoundsLibrary", from: "2.0.0"),
+],
+```
+
+```swift
+import SystemSoundsLibrary
+
+SystemSoundPlayer.play(.smsReceived) // 1003
+await SystemSoundPlayer.playAndWait(.mailReceived)
+```
+
+See [`Examples/SoundBrowser`](Examples/SoundBrowser) for a SwiftUI app that browses and plays every sound.
 
 ### Swift
 
