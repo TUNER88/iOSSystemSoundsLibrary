@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sounds.schema.json",
+  "title": "iOS system sound catalog",
+  "type": "object",
+  "required": [
+    "version",
+    "sources",
+    "sounds"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "generated": {
+      "type": "string",
+      "format": "date"
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Source key -> description/URL"
+    },
+    "sounds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sound"
+      }
+    }
+  },
+  "$defs": {
+    "sound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "file",
+        "folder",
+        "path",
+        "category",
+        "minIOS",
+        "status",
+        "confidence",
+        "source",
+        "ios7",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "SystemSoundID passed to AudioServicesPlaySystemSound"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][A-Za-z0-9]*$",
+          "description": "Stable lowerCamelCase identifier (used for generated Swift constants)"
+        },
+        "file": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Sound file name, null if the ID has no file (e.g. vibration/haptic only)"
+        },
+        "folder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "",
+            "New",
+            "Modern",
+            "nano",
+            null
+          ],
+          "description": "Sub-folder of /System/Library/Audio/UISounds ('' = root)"
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Full path of the file on recent iOS"
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Internal category name"
+        },
+        "minIOS": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d+\\.\\d+$",
+          "description": "First iOS version with this ID, null = available before iOS 16 or unknown"
+        },
+        "status": {
+          "enum": [
+            "current",
+            "changed-since-ios7",
+            "removed"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "source": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "readme-ios7",
+              "p-x9",
+              "onj-dump"
+            ]
+          }
+        },
+        "ios7": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "file": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "category": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "description": "Mapping from the original iOS 7 README table, if listed there"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

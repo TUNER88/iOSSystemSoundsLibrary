@@ -1,0 +1,12 @@
+iOSSystemSoundsLibrary
+Copyright (c) 2013-2026 Anton Pauli (MIT License, see LICENSE)
+
+This repository includes data derived from third-party sources:
+
+- p-x9/swift-system-sound (https://github.com/p-x9/swift-system-sound)
+  Copyright (c) 2023 p-x9, MIT License.
+  SystemSoundID mappings and minimum iOS versions in data/sounds.json.
+  The full license text is reproduced in data/README.md.
+
+- File name listings of /System/Library/Audio/UISounds for iOS 17-27 from
+  https://3.onj.me/phonetones/unzipped/Apple/ (names only, no audio files).
