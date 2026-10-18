@@ -1,0 +1,4 @@
+# The DocC site on GitHub Pages is published by .github/workflows/docs-pages.yml only after
+# a merge to master, so the link check can't reach it from a pull request before the first
+# deploy. Only this exact URL is excluded.
+^https://tuner88\.github\.io/iOSSystemSoundsLibrary/documentation/systemsoundslibrary/$
