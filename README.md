@@ -4,7 +4,7 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 
 - Run the demo project **on a real device** to hear all available system sounds. The iOS Simulator does not play system sounds.
 - See the [screenshot](#screenshot).
-- API documentation for the `SystemSoundsLibrary` Swift package: <https://tuner88.github.io/iOSSystemSoundsLibrary/documentation/systemsoundslibrary/>
+- The [usage](#usage) snippets call `AudioToolbox` directly. Copy and paste them; no dependency is needed.
 
 > [!NOTE]
 > Apple does not officially document these SystemSoundIDs or file names. The mappings below were collected on iOS 7 and **may differ, be missing, or be added on other iOS versions**. Always test on the iOS versions you support.
@@ -12,10 +12,10 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 ## Contents
 
 - [Usage](#usage)
-  - [Swift Package Manager](#swift-package-manager)
   - [Swift](#swift)
   - [SwiftUI](#swiftui)
   - [Objective-C](#objective-c)
+  - [Optional: Swift package](#swift-package-manager)
 - [List of SystemSoundIDs](#list-of-systemsoundids)
 - [List of all system audio files in iOS 7.0.2](#list-of-all-system-audio-files-in-ios-702)
 - [SystemSoundIDs added after iOS 7](#systemsoundids-added-after-ios-7)
@@ -32,24 +32,7 @@ A reference list of the system sounds built into iOS, plus a small demo app that
 
 All examples use the `AudioToolbox` framework (System Sound Services). It is linked automatically when you import it in a modern Xcode project.
 
-### Swift Package Manager
-
-The `SystemSoundsLibrary` package wraps these sounds in a typed Swift 6 API with availability information (iOS 15+, tvOS, visionOS, Mac Catalyst). Add it in Xcode with **File > Add Package Dependencies…**, or in `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/TUNER88/iOSSystemSoundsLibrary", from: "2.0.0"),
-],
-```
-
-```swift
-import SystemSoundsLibrary
-
-SystemSoundPlayer.play(.smsReceived) // 1003
-await SystemSoundPlayer.playAndWait(.mailReceived)
-```
-
-See [`Examples/SoundBrowser`](Examples/SoundBrowser) for a SwiftUI app that browses and plays every sound.
+The snippets below work as is. You don't need a third-party dependency to play system sounds.
 
 ### Swift
 
@@ -112,6 +95,16 @@ if (AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &soundID) == kA
 ```
 
 `AudioServicesPlaySystemSoundWithCompletion` requires iOS 9 or later.
+
+### Swift Package Manager
+
+Optional, and not needed to play system sounds. If you'd like named constants with availability information instead of raw IDs, there's a small companion package ([documentation](https://tuner88.github.io/iOSSystemSoundsLibrary/documentation/systemsoundslibrary/)):
+
+```swift
+.package(url: "https://github.com/TUNER88/iOSSystemSoundsLibrary", from: "2.0.0")
+
+SystemSoundPlayer.play(.smsReceived) // same as AudioServicesPlaySystemSound(1003)
+```
 
 ## List of SystemSoundIDs
 

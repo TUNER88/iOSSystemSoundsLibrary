@@ -1,8 +1,23 @@
 # Getting started
 
-Add the package and play your first system sound.
+Play a system sound with AudioToolbox alone, or optionally add the package.
 
-## Add the package
+## You may not need this package
+
+To play a system sound, call System Sound Services directly. There's nothing to install:
+
+```swift
+import AudioToolbox
+
+AudioServicesPlaySystemSound(1003) // SMSReceived
+```
+
+For the IDs and file names, see the tables in the
+[README](https://github.com/TUNER88/iOSSystemSoundsLibrary#list-of-systemsoundids). The
+package is optional. It adds named constants, availability annotations, async helpers and
+``FileSound``, which disposes of its sound ID automatically.
+
+## Add the package (optional)
 
 In Xcode, choose **File > Add Package Dependencies…** and enter
 `https://github.com/TUNER88/iOSSystemSoundsLibrary`. Or add it to `Package.swift`:

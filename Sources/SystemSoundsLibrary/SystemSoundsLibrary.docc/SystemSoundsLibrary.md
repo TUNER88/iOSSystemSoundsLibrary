@@ -1,17 +1,29 @@
 # ``SystemSoundsLibrary``
 
-Play iOS system sounds by name, with availability information and Swift 6 concurrency safety.
+An optional convenience layer over System Sound Services: named constants with availability information.
 
 ## Overview
 
-`SystemSoundsLibrary` wraps System Sound Services (`AudioToolbox`) with a typed catalog of 418 known
-system sounds. The catalog is generated from `data/sounds.json` in the
-[iOSSystemSoundsLibrary](https://github.com/TUNER88/iOSSystemSoundsLibrary) repository.
+You don't need this package to play system sounds. `AudioToolbox` ships with the SDK, and one
+call is enough:
+
+```swift
+import AudioToolbox
+
+AudioServicesPlaySystemSound(1003) // SMSReceived
+```
+
+The [iOSSystemSoundsLibrary](https://github.com/TUNER88/iOSSystemSoundsLibrary) README lists the
+IDs and sound files, with copy-paste snippets for Swift, SwiftUI and Objective-C.
+
+If you'd rather use names than raw IDs, `SystemSoundsLibrary` wraps the same calls. It has a
+typed catalog of 418 known sounds, generated from `data/sounds.json`, with `@available`
+annotations for sounds added in newer iOS versions:
 
 ```swift
 import SystemSoundsLibrary
 
-SystemSoundPlayer.play(.smsReceived)          // 1003
+SystemSoundPlayer.play(.smsReceived)          // same as AudioServicesPlaySystemSound(1003)
 await SystemSoundPlayer.playAndWait(.mailSentMailSent)
 
 if #available(iOS 17.0, *) {
