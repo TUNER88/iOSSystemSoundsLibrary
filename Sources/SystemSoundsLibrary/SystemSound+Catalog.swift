@@ -5,7 +5,7 @@
 import AudioToolbox
 
 extension SystemSound {
-    /// All 418 known system sounds, sorted by ID.
+    /// All 423 known system sounds, sorted by ID.
     public static let all: [SystemSound] = [
         SystemSound(id: 30, name: "inCallSystemSoundRingbackToneAnsi", fileName: "ringback_tone_ansi.caf", folder: "nano", category: "InCallSystemSound", minimumIOSVersion: nil, status: .current, confidence: .medium),
         SystemSound(id: 31, name: "inCallSystemSoundRingbackToneCept", fileName: "ringback_tone_cept.caf", folder: "nano", category: "InCallSystemSound", minimumIOSVersion: nil, status: .current, confidence: .medium),
@@ -17,6 +17,7 @@ extension SystemSound {
         SystemSound(id: 37, name: "inCallSystemSoundRingbackToneHk", fileName: "ringback_tone_hk.caf", folder: "nano", category: "InCallSystemSound", minimumIOSVersion: nil, status: .current, confidence: .medium),
         SystemSound(id: 38, name: "inCallSystemSoundRingbackToneAus", fileName: "ringback_tone_aus.caf", folder: "nano", category: "InCallSystemSound", minimumIOSVersion: nil, status: .current, confidence: .medium),
         SystemSound(id: 39, name: "inCallSystemSoundRingbackToneUk", fileName: "ringback_tone_uk.caf", folder: "nano", category: "InCallSystemSound", minimumIOSVersion: nil, status: .current, confidence: .medium),
+        SystemSound(id: 40, name: "inCallSystemSoundCallWaitingToneLowPriority", fileName: "call_waiting_tone_low_priority.caf", folder: "nano", category: "InCallSystemSound", minimumIOSVersion: "27.0", status: .current, confidence: .medium),
         SystemSound(id: 1000, name: "mailReceived", fileName: "new-mail.caf", folder: "", category: "MailReceived", minimumIOSVersion: nil, status: .current, confidence: .high),
         SystemSound(id: 1001, name: "mailSentMailSent", fileName: "mail-sent.caf", folder: "", category: "MailSent", minimumIOSVersion: nil, status: .current, confidence: .high),
         SystemSound(id: 1002, name: "voicemailReceived", fileName: "sms-received1.caf", folder: "nano", category: "VoicemailReceived", minimumIOSVersion: nil, status: .changedSinceIOS7, confidence: .low),
@@ -126,6 +127,9 @@ extension SystemSound {
         SystemSound(id: 1169, name: "earInteractionComplete", fileName: "EarInteraction_Complete.caf", folder: "", category: "EarInteraction_Complete", minimumIOSVersion: "18.1", status: .current, confidence: .medium),
         SystemSound(id: 1174, name: "timeToRun", fileName: nil, folder: nil, category: "Time_To_Run", minimumIOSVersion: "16.0", status: .current, confidence: .medium),
         SystemSound(id: 1175, name: "timeToWalk", fileName: nil, folder: nil, category: "Time_To_Walk", minimumIOSVersion: "16.0", status: .current, confidence: .medium),
+        SystemSound(id: 1176, name: "gymKitConnecting", fileName: "GymKitConnecting.caf", folder: "", category: "GymKit", minimumIOSVersion: "27.0", status: .current, confidence: .medium),
+        SystemSound(id: 1177, name: "gymKitConnected", fileName: "GymKitConnected.caf", folder: "", category: "GymKit", minimumIOSVersion: "27.0", status: .current, confidence: .medium),
+        SystemSound(id: 1178, name: "gymKitDisconnected", fileName: "GymKitDisconnected.caf", folder: "", category: "GymKit", minimumIOSVersion: "27.0", status: .current, confidence: .medium),
         SystemSound(id: 1200, name: "touchToneDtmf0", fileName: "dtmf-0.caf", folder: "nano", category: "TouchTone", minimumIOSVersion: nil, status: .current, confidence: .high),
         SystemSound(id: 1201, name: "touchToneDtmf1", fileName: "dtmf-1.caf", folder: "nano", category: "TouchTone", minimumIOSVersion: nil, status: .current, confidence: .high),
         SystemSound(id: 1202, name: "touchToneDtmf2", fileName: "dtmf-2.caf", folder: "nano", category: "TouchTone", minimumIOSVersion: nil, status: .current, confidence: .high),
@@ -225,6 +229,7 @@ extension SystemSound {
         SystemSound(id: 1372, name: "headGesturesDoubleShake", fileName: "HeadGesturesDoubleShake.caf", folder: "nano", category: nil, minimumIOSVersion: "18.0", status: .current, confidence: .medium),
         SystemSound(id: 1373, name: "headGesturesPartialNod", fileName: "HeadGesturesPartialNod.caf", folder: "nano", category: nil, minimumIOSVersion: "18.0", status: .current, confidence: .medium),
         SystemSound(id: 1374, name: "headGesturesPartialShake", fileName: "HeadGesturesPartialShake.caf", folder: "nano", category: nil, minimumIOSVersion: "18.0", status: .current, confidence: .medium),
+        SystemSound(id: 1381, name: "homeDeviceHourlyChime", fileName: nil, folder: nil, category: "HomeDeviceHourlyChime", minimumIOSVersion: "27.0", status: .current, confidence: .medium),
         SystemSound(id: 1390, name: "personalTranslatorLiveTranslationStart", fileName: "LiveTranslationStart.caf", folder: "", category: "PersonalTranslator", minimumIOSVersion: "26.0", status: .current, confidence: .medium),
         SystemSound(id: 1391, name: "personalTranslatorLiveTranslationStop", fileName: "LiveTranslationStop.caf", folder: "", category: "PersonalTranslator", minimumIOSVersion: "26.0", status: .current, confidence: .medium),
         SystemSound(id: 1392, name: "personalTranslatorDualBudLongPressFailure", fileName: "DualBudLongPressFailure.caf", folder: "", category: "PersonalTranslator", minimumIOSVersion: "26.0", status: .current, confidence: .medium),
@@ -477,2122 +482,2157 @@ extension SystemSound {
     /// Confidence: medium.
     public static var inCallSystemSoundRingbackToneUk: SystemSound { all[9] }
 
+    /// `40` · `/System/Library/Audio/UISounds/nano/call_waiting_tone_low_priority.caf` · InCallSystemSound
+    ///
+    /// Confidence: medium. Available since iOS 27.0.
+    /// - Note: Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16).
+    @available(iOS 27.0, *)
+    public static var inCallSystemSoundCallWaitingToneLowPriority: SystemSound { all[10] }
+
     /// `1000` · `/System/Library/Audio/UISounds/new-mail.caf` · MailReceived
     ///
     /// Confidence: high.
-    public static var mailReceived: SystemSound { all[10] }
+    public static var mailReceived: SystemSound { all[11] }
 
     /// `1001` · `/System/Library/Audio/UISounds/mail-sent.caf` · MailSent
     ///
     /// Confidence: high.
-    public static var mailSentMailSent: SystemSound { all[11] }
+    public static var mailSentMailSent: SystemSound { all[12] }
 
     /// `1002` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · VoicemailReceived
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to Voicemail.caf; p-x9 maps it to sms-received1.caf. Verify on device. The iOS 7 file Voicemail.caf no longer exists (iOS 17-27 dumps).
-    public static var voicemailReceived: SystemSound { all[12] }
+    public static var voicemailReceived: SystemSound { all[13] }
 
     /// `1003` · `/System/Library/Audio/UISounds/ReceivedMessage.caf` · SMSReceived
     ///
     /// Confidence: high.
-    public static var smsReceived: SystemSound { all[13] }
+    public static var smsReceived: SystemSound { all[14] }
 
     /// `1004` · `/System/Library/Audio/UISounds/SentMessage.caf` · SMSSent
     ///
     /// Confidence: high.
-    public static var smsSent: SystemSound { all[14] }
+    public static var smsSent: SystemSound { all[15] }
 
     /// `1005` · `/System/Library/Audio/UISounds/alarm.caf` · CalendarAlert
     ///
     /// Confidence: high.
-    public static var calendarAlert: SystemSound { all[15] }
+    public static var calendarAlert: SystemSound { all[16] }
 
     /// `1006` · `/System/Library/Audio/UISounds/low_power.caf` · LowPower
     ///
     /// Confidence: high.
-    public static var lowPower: SystemSound { all[16] }
+    public static var lowPower: SystemSound { all[17] }
 
     /// `1007` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived1: SystemSound { all[17] }
+    public static var smsReceivedAlertSmsReceived1: SystemSound { all[18] }
 
     /// `1008` · `/System/Library/Audio/UISounds/sms-received2.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived2: SystemSound { all[18] }
+    public static var smsReceivedAlertSmsReceived2: SystemSound { all[19] }
 
     /// `1009` · `/System/Library/Audio/UISounds/sms-received3.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived3: SystemSound { all[19] }
+    public static var smsReceivedAlertSmsReceived3: SystemSound { all[20] }
 
     /// `1010` · `/System/Library/Audio/UISounds/sms-received4.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived4: SystemSound { all[20] }
+    public static var smsReceivedAlertSmsReceived4: SystemSound { all[21] }
 
     /// `1011` · SMSReceived_Vibrate
     ///
     /// Confidence: high.
-    public static var smsReceivedVibrate: SystemSound { all[21] }
+    public static var smsReceivedVibrate: SystemSound { all[22] }
 
     /// `1012` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived11012: SystemSound { all[22] }
+    public static var smsReceivedAlertSmsReceived11012: SystemSound { all[23] }
 
     /// `1013` · `/System/Library/Audio/UISounds/sms-received5.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived5: SystemSound { all[23] }
+    public static var smsReceivedAlertSmsReceived5: SystemSound { all[24] }
 
     /// `1014` · `/System/Library/Audio/UISounds/sms-received6.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSmsReceived6: SystemSound { all[24] }
+    public static var smsReceivedAlertSmsReceived6: SystemSound { all[25] }
 
     /// `1015` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · UserAlert
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to Voicemail.caf; p-x9 maps it to sms-received1.caf. Verify on device. The iOS 7 file Voicemail.caf no longer exists (iOS 17-27 dumps).
-    public static var userAlertSmsReceived1: SystemSound { all[25] }
+    public static var userAlertSmsReceived1: SystemSound { all[26] }
 
     /// `1016` · `/System/Library/Audio/UISounds/tweet_sent.caf` · MailSent
     ///
     /// Confidence: medium.
     /// - Note: Category differs from the iOS 7 table.
-    public static var mailSentTweetSent: SystemSound { all[26] }
+    public static var mailSentTweetSent: SystemSound { all[27] }
 
     /// `1017` · `/System/Library/Audio/UISounds/alarm.caf` · ReminderAlert
     ///
     /// Confidence: medium.
-    public static var reminderAlert: SystemSound { all[27] }
+    public static var reminderAlert: SystemSound { all[28] }
 
     /// `1018` · `/System/Library/Audio/UISounds/Swish.caf` · MailSent
     ///
     /// Confidence: medium.
-    public static var mailSentSwish: SystemSound { all[28] }
+    public static var mailSentSwish: SystemSound { all[29] }
 
     /// `1020` · `/System/Library/Audio/UISounds/New/Anticipate.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertAnticipate: SystemSound { all[29] }
+    public static var smsReceivedAlertAnticipate: SystemSound { all[30] }
 
     /// `1021` · `/System/Library/Audio/UISounds/New/Bloom.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertBloom: SystemSound { all[30] }
+    public static var smsReceivedAlertBloom: SystemSound { all[31] }
 
     /// `1022` · `/System/Library/Audio/UISounds/New/Calypso.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertCalypso: SystemSound { all[31] }
+    public static var smsReceivedAlertCalypso: SystemSound { all[32] }
 
     /// `1023` · `/System/Library/Audio/UISounds/New/Choo_Choo.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertChooChoo: SystemSound { all[32] }
+    public static var smsReceivedAlertChooChoo: SystemSound { all[33] }
 
     /// `1024` · `/System/Library/Audio/UISounds/New/Descent.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertDescent: SystemSound { all[33] }
+    public static var smsReceivedAlertDescent: SystemSound { all[34] }
 
     /// `1025` · `/System/Library/Audio/UISounds/New/Fanfare.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertFanfare: SystemSound { all[34] }
+    public static var smsReceivedAlertFanfare: SystemSound { all[35] }
 
     /// `1026` · `/System/Library/Audio/UISounds/New/Ladder.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertLadder: SystemSound { all[35] }
+    public static var smsReceivedAlertLadder: SystemSound { all[36] }
 
     /// `1027` · `/System/Library/Audio/UISounds/New/Minuet.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertMinuet: SystemSound { all[36] }
+    public static var smsReceivedAlertMinuet: SystemSound { all[37] }
 
     /// `1028` · `/System/Library/Audio/UISounds/New/News_Flash.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertNewsFlash: SystemSound { all[37] }
+    public static var smsReceivedAlertNewsFlash: SystemSound { all[38] }
 
     /// `1029` · `/System/Library/Audio/UISounds/New/Noir.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertNoir: SystemSound { all[38] }
+    public static var smsReceivedAlertNoir: SystemSound { all[39] }
 
     /// `1030` · `/System/Library/Audio/UISounds/New/Sherwood_Forest.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSherwoodForest: SystemSound { all[39] }
+    public static var smsReceivedAlertSherwoodForest: SystemSound { all[40] }
 
     /// `1031` · `/System/Library/Audio/UISounds/New/Spell.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSpell: SystemSound { all[40] }
+    public static var smsReceivedAlertSpell: SystemSound { all[41] }
 
     /// `1032` · `/System/Library/Audio/UISounds/New/Suspense.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertSuspense: SystemSound { all[41] }
+    public static var smsReceivedAlertSuspense: SystemSound { all[42] }
 
     /// `1033` · `/System/Library/Audio/UISounds/New/Telegraph.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertTelegraph: SystemSound { all[42] }
+    public static var smsReceivedAlertTelegraph: SystemSound { all[43] }
 
     /// `1034` · `/System/Library/Audio/UISounds/New/Tiptoes.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertTiptoes: SystemSound { all[43] }
+    public static var smsReceivedAlertTiptoes: SystemSound { all[44] }
 
     /// `1035` · `/System/Library/Audio/UISounds/New/Typewriters.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertTypewriters: SystemSound { all[44] }
+    public static var smsReceivedAlertTypewriters: SystemSound { all[45] }
 
     /// `1036` · `/System/Library/Audio/UISounds/New/Update.caf` · SMSReceived_Alert
     ///
     /// Confidence: high.
-    public static var smsReceivedAlertUpdate: SystemSound { all[45] }
+    public static var smsReceivedAlertUpdate: SystemSound { all[46] }
 
     /// `1050` · `/System/Library/Audio/UISounds/ussd.caf` · USSDAlert
     ///
     /// Confidence: high.
-    public static var ussdAlert: SystemSound { all[46] }
+    public static var ussdAlert: SystemSound { all[47] }
 
     /// `1051` · `/System/Library/Audio/UISounds/SIMToolkitCallDropped.caf` · SIMToolkitTone
     ///
     /// Confidence: high.
-    public static var simToolkitToneSimToolkitCallDropped: SystemSound { all[47] }
+    public static var simToolkitToneSimToolkitCallDropped: SystemSound { all[48] }
 
     /// `1052` · `/System/Library/Audio/UISounds/SIMToolkitGeneralBeep.caf` · SIMToolkitTone
     ///
     /// Confidence: high.
-    public static var simToolkitToneSimToolkitGeneralBeep: SystemSound { all[48] }
+    public static var simToolkitToneSimToolkitGeneralBeep: SystemSound { all[49] }
 
     /// `1053` · `/System/Library/Audio/UISounds/SIMToolkitNegativeACK.caf` · SIMToolkitTone
     ///
     /// Confidence: high.
-    public static var simToolkitToneSimToolkitNegativeACK: SystemSound { all[49] }
+    public static var simToolkitToneSimToolkitNegativeACK: SystemSound { all[50] }
 
     /// `1054` · `/System/Library/Audio/UISounds/SIMToolkitPositiveACK.caf` · SIMToolkitTone
     ///
     /// Confidence: high.
-    public static var simToolkitToneSimToolkitPositiveACK: SystemSound { all[50] }
+    public static var simToolkitToneSimToolkitPositiveACK: SystemSound { all[51] }
 
     /// `1055` · `/System/Library/Audio/UISounds/SIMToolkitSMS.caf` · SIMToolkitTone
     ///
     /// Confidence: high.
-    public static var simToolkitToneSimToolkitSMS: SystemSound { all[51] }
+    public static var simToolkitToneSimToolkitSMS: SystemSound { all[52] }
 
     /// `1057` · `/System/Library/Audio/UISounds/Tink.caf` · PINKeyPressed
     ///
     /// Confidence: high.
-    public static var pinKeyPressed: SystemSound { all[52] }
+    public static var pinKeyPressed: SystemSound { all[53] }
 
     /// `1060` · `/System/Library/Audio/UISounds/WebcamStart.caf` · WebcamStartAlwaysHeard
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var webcamStartAlwaysHeard: SystemSound { all[53] }
+    public static var webcamStartAlwaysHeard: SystemSound { all[54] }
 
     /// `1061` · `/System/Library/Audio/UISounds/LiquidDetected.caf` · LiquidDetectedAlwaysHeard
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var liquidDetectedAlwaysHeard: SystemSound { all[54] }
+    public static var liquidDetectedAlwaysHeard: SystemSound { all[55] }
 
     /// `1070` · `/System/Library/Audio/UISounds/ct-busy.caf` · AudioToneBusy
     ///
     /// Confidence: high.
-    public static var audioToneBusy: SystemSound { all[55] }
+    public static var audioToneBusy: SystemSound { all[56] }
 
     /// `1071` · `/System/Library/Audio/UISounds/ct-congestion.caf` · AudioToneCongestion
     ///
     /// Confidence: high.
-    public static var audioToneCongestion: SystemSound { all[56] }
+    public static var audioToneCongestion: SystemSound { all[57] }
 
     /// `1072` · `/System/Library/Audio/UISounds/ct-path-ack.caf` · AudioTonePathAcknowledge
     ///
     /// Confidence: high.
-    public static var audioTonePathAcknowledge: SystemSound { all[57] }
+    public static var audioTonePathAcknowledge: SystemSound { all[58] }
 
     /// `1073` · `/System/Library/Audio/UISounds/ct-error.caf` · AudioToneError
     ///
     /// Confidence: high.
-    public static var audioToneError: SystemSound { all[58] }
+    public static var audioToneError: SystemSound { all[59] }
 
     /// `1074` · `/System/Library/Audio/UISounds/nano/ct-call-waiting.caf` · AudioToneCallWaiting
     ///
     /// Confidence: high.
-    public static var audioToneCallWaiting: SystemSound { all[59] }
+    public static var audioToneCallWaiting: SystemSound { all[60] }
 
     /// `1075` · `/System/Library/Audio/UISounds/ct-keytone2.caf` · AudioToneKey2
     ///
     /// Confidence: high.
-    public static var audioToneKey2: SystemSound { all[60] }
+    public static var audioToneKey2: SystemSound { all[61] }
 
     /// `1100` · `/System/Library/Audio/UISounds/lock.caf` · ScreenLocked
     ///
     /// Confidence: high.
-    public static var screenLocked: SystemSound { all[61] }
+    public static var screenLocked: SystemSound { all[62] }
 
     /// `1101` · `/System/Library/Audio/UISounds/unlock.caf` · ScreenUnlocked
     ///
     /// Confidence: low.
     /// - Note: Only in the iOS 7 table; unlock.caf is not present in the iOS 17-27 dumps and the ID is not listed by p-x9. File path not found in the iOS 26 dump.
     @available(*, deprecated, message: "The sound file no longer exists on recent iOS versions. Only in the iOS 7 table; unlock.caf is not present in the iOS 17-27 dumps and the ID is not listed by p-x9. File path not found in the iOS 26 dump.")
-    public static var screenUnlocked: SystemSound { all[62] }
+    public static var screenUnlocked: SystemSound { all[63] }
 
     /// `1102` · FailedUnlock
     ///
     /// Confidence: high.
-    public static var failedUnlock: SystemSound { all[63] }
+    public static var failedUnlock: SystemSound { all[64] }
 
     /// `1103` · `/System/Library/Audio/UISounds/Tink.caf` · KeyPressed
     ///
     /// Confidence: high.
-    public static var keyPressedTink: SystemSound { all[64] }
+    public static var keyPressedTink: SystemSound { all[65] }
 
     /// `1104` · `/System/Library/Audio/UISounds/key_press_click.caf` · KeyPressed
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to Tock.caf; p-x9 maps it to key_press_click.caf. Verify on device.
-    public static var keyPressedKeyPressClick: SystemSound { all[65] }
+    public static var keyPressedKeyPressClick: SystemSound { all[66] }
 
     /// `1105` · `/System/Library/Audio/UISounds/Tock.caf` · KeyPressed
     ///
     /// Confidence: high.
-    public static var keyPressedTock: SystemSound { all[66] }
+    public static var keyPressedTock: SystemSound { all[67] }
 
     /// `1106` · `/System/Library/Audio/UISounds/connect_power.caf` · ConnectedToPower
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to beep-beep.caf; p-x9 maps it to connect_power.caf. Verify on device. The iOS 7 file beep-beep.caf no longer exists (iOS 17-27 dumps).
-    public static var connectedToPower: SystemSound { all[67] }
+    public static var connectedToPower: SystemSound { all[68] }
 
     /// `1107` · `/System/Library/Audio/UISounds/RingerChanged.caf` · RingerSwitchIndication
     ///
     /// Confidence: high.
-    public static var ringerSwitchIndication: SystemSound { all[68] }
+    public static var ringerSwitchIndication: SystemSound { all[69] }
 
     /// `1108` · `/System/Library/Audio/UISounds/photoShutter.caf` · CameraShutter
     ///
     /// Confidence: high.
-    public static var cameraShutter: SystemSound { all[69] }
+    public static var cameraShutter: SystemSound { all[70] }
 
     /// `1109` · `/System/Library/Audio/UISounds/shake.caf` · ShakeToShuffle
     ///
     /// Confidence: high.
-    public static var shakeToShuffle: SystemSound { all[70] }
+    public static var shakeToShuffle: SystemSound { all[71] }
 
     /// `1110` · `/System/Library/Audio/UISounds/jbl_begin.caf` · JBL_Begin
     ///
     /// Confidence: high.
-    public static var jblBegin: SystemSound { all[71] }
+    public static var jblBegin: SystemSound { all[72] }
 
     /// `1111` · `/System/Library/Audio/UISounds/jbl_confirm.caf` · JBL_Confirm
     ///
     /// Confidence: high.
-    public static var jblConfirm: SystemSound { all[72] }
+    public static var jblConfirm: SystemSound { all[73] }
 
     /// `1112` · `/System/Library/Audio/UISounds/jbl_cancel.caf` · JBL_Cancel
     ///
     /// Confidence: high.
-    public static var jblCancel: SystemSound { all[73] }
+    public static var jblCancel: SystemSound { all[74] }
 
     /// `1113` · `/System/Library/Audio/UISounds/begin_record.caf` · BeginRecording
     ///
     /// Confidence: high.
-    public static var beginRecording: SystemSound { all[74] }
+    public static var beginRecording: SystemSound { all[75] }
 
     /// `1114` · `/System/Library/Audio/UISounds/end_record.caf` · EndRecording
     ///
     /// Confidence: high.
-    public static var endRecording: SystemSound { all[75] }
+    public static var endRecording: SystemSound { all[76] }
 
     /// `1115` · `/System/Library/Audio/UISounds/jbl_ambiguous.caf` · JBL_Ambiguous
     ///
     /// Confidence: high.
-    public static var jblAmbiguous: SystemSound { all[76] }
+    public static var jblAmbiguous: SystemSound { all[77] }
 
     /// `1116` · `/System/Library/Audio/UISounds/jbl_no_match.caf` · JBL_NoMatch
     ///
     /// Confidence: high.
-    public static var jblNoMatch: SystemSound { all[77] }
+    public static var jblNoMatch: SystemSound { all[78] }
 
     /// `1117` · `/System/Library/Audio/UISounds/begin_record.caf` · BeginVideoRecording
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to begin_video_record.caf; p-x9 maps it to begin_record.caf. Verify on device. The iOS 7 file begin_video_record.caf no longer exists (iOS 17-27 dumps).
-    public static var beginVideoRecording: SystemSound { all[78] }
+    public static var beginVideoRecording: SystemSound { all[79] }
 
     /// `1118` · `/System/Library/Audio/UISounds/end_record.caf` · EndVideoRecording
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to end_video_record.caf; p-x9 maps it to end_record.caf. Verify on device. The iOS 7 file end_video_record.caf no longer exists (iOS 17-27 dumps).
-    public static var endVideoRecording: SystemSound { all[79] }
+    public static var endVideoRecording: SystemSound { all[80] }
 
     /// `1119` · `/System/Library/Audio/UISounds/Modern/camera_shutter_burst.caf` · CameraShutterAlt
     ///
     /// Confidence: medium.
-    public static var cameraShutterAltCameraShutterBurst: SystemSound { all[80] }
+    public static var cameraShutterAltCameraShutterBurst: SystemSound { all[81] }
 
     /// `1120` · `/System/Library/Audio/UISounds/Modern/airdrop_invite.caf` · AirDropInvitation
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var airDropInvitation: SystemSound { all[81] }
+    public static var airDropInvitation: SystemSound { all[82] }
 
     /// `1121` · `/System/Library/Audio/UISounds/Modern/camera_shutter_burst_begin.caf` · CameraShutterAlt
     ///
     /// Confidence: medium.
-    public static var cameraShutterAltCameraShutterBurstBegin: SystemSound { all[82] }
+    public static var cameraShutterAltCameraShutterBurstBegin: SystemSound { all[83] }
 
     /// `1122` · `/System/Library/Audio/UISounds/Modern/camera_shutter_burst_end.caf` · CameraShutterAlt
     ///
     /// Confidence: medium.
-    public static var cameraShutterAltCameraShutterBurstEnd: SystemSound { all[83] }
+    public static var cameraShutterAltCameraShutterBurstEnd: SystemSound { all[84] }
 
     /// `1123` · `/System/Library/Audio/UISounds/key_press_click.caf` · KeyPressClick_Remote
     ///
     /// Confidence: medium.
-    public static var keyPressClickRemote: SystemSound { all[84] }
+    public static var keyPressClickRemote: SystemSound { all[85] }
 
     /// `1124` · `/System/Library/Audio/UISounds/focus_change_keyboard.caf` · FocusChangeKeyboard
     ///
     /// Confidence: medium.
-    public static var focusChangeKeyboard: SystemSound { all[85] }
+    public static var focusChangeKeyboard: SystemSound { all[86] }
 
     /// `1125` · `/System/Library/Audio/UISounds/focus_change_app_icon.caf` · FocusChangeAppIcon
     ///
     /// Confidence: medium.
-    public static var focusChangeAppIcon: SystemSound { all[86] }
+    public static var focusChangeAppIcon: SystemSound { all[87] }
 
     /// `1126` · `/System/Library/Audio/UISounds/focus_change_large.caf` · FocusChangeLarge
     ///
     /// Confidence: medium.
-    public static var focusChangeLarge: SystemSound { all[87] }
+    public static var focusChangeLarge: SystemSound { all[88] }
 
     /// `1127` · `/System/Library/Audio/UISounds/focus_change_small.caf` · FocusChangeSmall
     ///
     /// Confidence: medium.
-    public static var focusChangeSmall: SystemSound { all[88] }
+    public static var focusChangeSmall: SystemSound { all[89] }
 
     /// `1128` · `/System/Library/Audio/UISounds/navigation_push.caf` · NavigationPush
     ///
     /// Confidence: medium.
-    public static var navigationPush: SystemSound { all[89] }
+    public static var navigationPush: SystemSound { all[90] }
 
     /// `1129` · `/System/Library/Audio/UISounds/navigation_pop.caf` · NavigationPop
     ///
     /// Confidence: medium.
-    public static var navigationPop: SystemSound { all[90] }
+    public static var navigationPop: SystemSound { all[91] }
 
     /// `1130` · `/System/Library/Audio/UISounds/keyboard_press_normal.caf` · KeyboardPressNormal
     ///
     /// Confidence: medium.
-    public static var keyboardPressNormal: SystemSound { all[91] }
+    public static var keyboardPressNormal: SystemSound { all[92] }
 
     /// `1131` · `/System/Library/Audio/UISounds/keyboard_press_delete.caf` · KeyboardPressDelete
     ///
     /// Confidence: medium.
-    public static var keyboardPressDelete: SystemSound { all[92] }
+    public static var keyboardPressDelete: SystemSound { all[93] }
 
     /// `1132` · `/System/Library/Audio/UISounds/keyboard_press_clear.caf` · KeyboardPressClear
     ///
     /// Confidence: medium.
-    public static var keyboardPressClear: SystemSound { all[93] }
+    public static var keyboardPressClear: SystemSound { all[94] }
 
     /// `1133` · `/System/Library/Audio/UISounds/photoShutter.caf`
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var photoShutter: SystemSound { all[94] }
+    public static var photoShutter: SystemSound { all[95] }
 
     /// `1134` · `/System/Library/Audio/UISounds/begin_record.caf`
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var beginRecord: SystemSound { all[95] }
+    public static var beginRecord: SystemSound { all[96] }
 
     /// `1135` · `/System/Library/Audio/UISounds/end_record.caf`
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var endRecord: SystemSound { all[96] }
+    public static var endRecord: SystemSound { all[97] }
 
     /// `1150` · `/System/Library/Audio/UISounds/nano/vc~invitation-accepted.caf` · VCInvitationAccepted
     ///
     /// Confidence: high.
-    public static var vcInvitationAccepted: SystemSound { all[97] }
+    public static var vcInvitationAccepted: SystemSound { all[98] }
 
     /// `1151` · `/System/Library/Audio/UISounds/nano/vc~ringing.caf` · VCRinging
     ///
     /// Confidence: high.
-    public static var vcRinging: SystemSound { all[98] }
+    public static var vcRinging: SystemSound { all[99] }
 
     /// `1152` · `/System/Library/Audio/UISounds/nano/vc~ended.caf` · VCEnded
     ///
     /// Confidence: high.
-    public static var vcEnded: SystemSound { all[99] }
+    public static var vcEnded: SystemSound { all[100] }
 
     /// `1153` · `/System/Library/Audio/UISounds/nano/ct-call-waiting.caf` · VCCallWaiting
     ///
     /// Confidence: high.
-    public static var vcCallWaiting: SystemSound { all[100] }
+    public static var vcCallWaiting: SystemSound { all[101] }
 
     /// `1154` · `/System/Library/Audio/UISounds/nano/vc~ringing.caf` · VCCallUpgrade
     ///
     /// Confidence: high.
-    public static var vcCallUpgrade: SystemSound { all[101] }
+    public static var vcCallUpgrade: SystemSound { all[102] }
 
     /// `1155` · `/System/Library/Audio/UISounds/key_press_delete.caf` · KeyPressed
     ///
     /// Confidence: medium.
-    public static var keyPressedKeyPressDelete: SystemSound { all[102] }
+    public static var keyPressedKeyPressDelete: SystemSound { all[103] }
 
     /// `1156` · `/System/Library/Audio/UISounds/key_press_modifier.caf` · KeyPressed
     ///
     /// Confidence: medium.
-    public static var keyPressedKeyPressModifier: SystemSound { all[103] }
+    public static var keyPressedKeyPressModifier: SystemSound { all[104] }
 
     /// `1157` · `/System/Library/Audio/UISounds/wheels_of_time.caf` · KeyPressed
     ///
     /// Confidence: medium.
-    public static var keyPressedWheelsOfTime: SystemSound { all[104] }
+    public static var keyPressedWheelsOfTime: SystemSound { all[105] }
 
     /// `1158` · `/System/Library/Audio/UISounds/go_to_sleep_alert.caf` · GoToSleep_Alert
     ///
     /// Confidence: medium.
-    public static var goToSleepAlert: SystemSound { all[105] }
+    public static var goToSleepAlert: SystemSound { all[106] }
 
     /// `1159` · `/System/Library/Audio/UISounds/warsaw.caf` · Warsaw
     ///
     /// Confidence: medium.
-    public static var warsaw: SystemSound { all[106] }
+    public static var warsaw: SystemSound { all[107] }
 
     /// `1160` · `/System/Library/Audio/UISounds/nfc_scan_complete.caf` · PaymentSuccess
     ///
     /// Confidence: medium.
-    public static var paymentSuccessNfcScanComplete: SystemSound { all[107] }
+    public static var paymentSuccessNfcScanComplete: SystemSound { all[108] }
 
     /// `1161` · PearlSuccess
     ///
     /// Confidence: medium.
-    public static var pearlSuccess: SystemSound { all[108] }
+    public static var pearlSuccess: SystemSound { all[109] }
 
     /// `1162` · PearlFailure
     ///
     /// Confidence: medium.
-    public static var pearlFailure: SystemSound { all[109] }
+    public static var pearlFailure: SystemSound { all[110] }
 
     /// `1163` · `/System/Library/Audio/UISounds/access_scan_complete.caf` · PaymentSuccess
     ///
     /// Confidence: medium.
-    public static var paymentSuccessAccessScanComplete: SystemSound { all[110] }
+    public static var paymentSuccessAccessScanComplete: SystemSound { all[111] }
 
     /// `1164` · USBHardening_Alert
     ///
     /// Confidence: medium.
-    public static var usbHardeningAlert: SystemSound { all[111] }
+    public static var usbHardeningAlert: SystemSound { all[112] }
 
     /// `1165` · `/System/Library/Audio/UISounds/3rd_party_critical.caf` · Critical_Alert
     ///
     /// Confidence: medium.
-    public static var criticalAlert: SystemSound { all[112] }
+    public static var criticalAlert: SystemSound { all[113] }
 
     /// `1166` · `/System/Library/Audio/UISounds/PaymentReceived.caf` · PaymentReceived
     ///
     /// Confidence: medium.
-    public static var paymentReceived: SystemSound { all[113] }
+    public static var paymentReceived: SystemSound { all[114] }
 
     /// `1167` · `/System/Library/Audio/UISounds/Doorbell.caf` · Doorbell
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var doorbell: SystemSound { all[114] }
+    public static var doorbell: SystemSound { all[115] }
 
     /// `1168` · `/System/Library/Audio/UISounds/PaymentReceivedFailure.caf` · PaymentReceivedFailure
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var paymentReceivedFailure: SystemSound { all[115] }
+    public static var paymentReceivedFailure: SystemSound { all[116] }
 
     /// `1169` · `/System/Library/Audio/UISounds/EarInteraction_Complete.caf` · EarInteraction_Complete
     ///
     /// Confidence: medium. Available since iOS 18.1.
     @available(iOS 18.1, *)
-    public static var earInteractionComplete: SystemSound { all[116] }
+    public static var earInteractionComplete: SystemSound { all[117] }
 
     /// `1174` · Time_To_Run
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var timeToRun: SystemSound { all[117] }
+    public static var timeToRun: SystemSound { all[118] }
 
     /// `1175` · Time_To_Walk
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var timeToWalk: SystemSound { all[118] }
+    public static var timeToWalk: SystemSound { all[119] }
+
+    /// `1176` · `/System/Library/Audio/UISounds/GymKitConnecting.caf` · GymKit
+    ///
+    /// Confidence: medium. Available since iOS 27.0.
+    /// - Note: Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16).
+    @available(iOS 27.0, *)
+    public static var gymKitConnecting: SystemSound { all[120] }
+
+    /// `1177` · `/System/Library/Audio/UISounds/GymKitConnected.caf` · GymKit
+    ///
+    /// Confidence: medium. Available since iOS 27.0.
+    /// - Note: Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16).
+    @available(iOS 27.0, *)
+    public static var gymKitConnected: SystemSound { all[121] }
+
+    /// `1178` · `/System/Library/Audio/UISounds/GymKitDisconnected.caf` · GymKit
+    ///
+    /// Confidence: medium. Available since iOS 27.0.
+    /// - Note: Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16).
+    @available(iOS 27.0, *)
+    public static var gymKitDisconnected: SystemSound { all[122] }
 
     /// `1200` · `/System/Library/Audio/UISounds/nano/dtmf-0.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf0: SystemSound { all[119] }
+    public static var touchToneDtmf0: SystemSound { all[123] }
 
     /// `1201` · `/System/Library/Audio/UISounds/nano/dtmf-1.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf1: SystemSound { all[120] }
+    public static var touchToneDtmf1: SystemSound { all[124] }
 
     /// `1202` · `/System/Library/Audio/UISounds/nano/dtmf-2.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf2: SystemSound { all[121] }
+    public static var touchToneDtmf2: SystemSound { all[125] }
 
     /// `1203` · `/System/Library/Audio/UISounds/nano/dtmf-3.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf3: SystemSound { all[122] }
+    public static var touchToneDtmf3: SystemSound { all[126] }
 
     /// `1204` · `/System/Library/Audio/UISounds/nano/dtmf-4.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf4: SystemSound { all[123] }
+    public static var touchToneDtmf4: SystemSound { all[127] }
 
     /// `1205` · `/System/Library/Audio/UISounds/nano/dtmf-5.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf5: SystemSound { all[124] }
+    public static var touchToneDtmf5: SystemSound { all[128] }
 
     /// `1206` · `/System/Library/Audio/UISounds/nano/dtmf-6.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf6: SystemSound { all[125] }
+    public static var touchToneDtmf6: SystemSound { all[129] }
 
     /// `1207` · `/System/Library/Audio/UISounds/nano/dtmf-7.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf7: SystemSound { all[126] }
+    public static var touchToneDtmf7: SystemSound { all[130] }
 
     /// `1208` · `/System/Library/Audio/UISounds/nano/dtmf-8.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf8: SystemSound { all[127] }
+    public static var touchToneDtmf8: SystemSound { all[131] }
 
     /// `1209` · `/System/Library/Audio/UISounds/nano/dtmf-9.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmf9: SystemSound { all[128] }
+    public static var touchToneDtmf9: SystemSound { all[132] }
 
     /// `1210` · `/System/Library/Audio/UISounds/nano/dtmf-star.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmfStar: SystemSound { all[129] }
+    public static var touchToneDtmfStar: SystemSound { all[133] }
 
     /// `1211` · `/System/Library/Audio/UISounds/nano/dtmf-pound.caf` · TouchTone
     ///
     /// Confidence: high.
-    public static var touchToneDtmfPound: SystemSound { all[130] }
+    public static var touchToneDtmfPound: SystemSound { all[134] }
 
     /// `1253` · `/System/Library/Audio/UISounds/DeviceShutdown.caf` · DeviceShutdown
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var deviceShutdown: SystemSound { all[131] }
+    public static var deviceShutdown: SystemSound { all[135] }
 
     /// `1254` · `/System/Library/Audio/UISounds/long_low_short_high.caf` · Headset_StartCall
     ///
     /// Confidence: high.
-    public static var headsetStartCall: SystemSound { all[132] }
+    public static var headsetStartCall: SystemSound { all[136] }
 
     /// `1255` · `/System/Library/Audio/UISounds/short_double_high.caf` · Headset_Redial
     ///
     /// Confidence: high.
-    public static var headsetRedial: SystemSound { all[133] }
+    public static var headsetRedial: SystemSound { all[137] }
 
     /// `1256` · `/System/Library/Audio/UISounds/short_low_high.caf` · Headset_AnswerCall
     ///
     /// Confidence: high.
-    public static var headsetAnswerCall: SystemSound { all[134] }
+    public static var headsetAnswerCall: SystemSound { all[138] }
 
     /// `1257` · `/System/Library/Audio/UISounds/short_double_low.caf` · Headset_EndCall
     ///
     /// Confidence: high.
-    public static var headsetEndCall: SystemSound { all[135] }
+    public static var headsetEndCall: SystemSound { all[139] }
 
     /// `1258` · `/System/Library/Audio/UISounds/short_double_low.caf` · Headset_CallWaitingActions
     ///
     /// Confidence: high.
-    public static var headsetCallWaitingActions: SystemSound { all[136] }
+    public static var headsetCallWaitingActions: SystemSound { all[140] }
 
     /// `1259` · `/System/Library/Audio/UISounds/middle_9_short_double_low.caf` · Headset_TransitionEnd
     ///
     /// Confidence: high.
-    public static var headsetTransitionEnd: SystemSound { all[137] }
+    public static var headsetTransitionEnd: SystemSound { all[141] }
 
     /// `1260` · `/System/Library/Audio/UISounds/camera_timer_final_second.caf` · CameraShutterAlt
     ///
     /// Confidence: medium.
-    public static var cameraShutterAltCameraTimerFinalSecond: SystemSound { all[138] }
+    public static var cameraShutterAltCameraTimerFinalSecond: SystemSound { all[142] }
 
     /// `1261` · `/System/Library/Audio/UISounds/camera_timer_countdown.caf` · CameraShutterAlt
     ///
     /// Confidence: medium.
-    public static var cameraShutterAltCameraTimerCountdown: SystemSound { all[139] }
+    public static var cameraShutterAltCameraTimerCountdown: SystemSound { all[143] }
 
     /// `1262` · `/System/Library/Audio/UISounds/health_notification.caf` · Health_Alert
     ///
     /// Confidence: medium.
-    public static var healthAlert: SystemSound { all[140] }
+    public static var healthAlert: SystemSound { all[144] }
 
     /// `1263` · `/System/Library/Audio/UISounds/nano/MultiwayJoin.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMultiwayJoin: SystemSound { all[141] }
+    public static var inCallSystemSoundMultiwayJoin: SystemSound { all[145] }
 
     /// `1264` · `/System/Library/Audio/UISounds/nano/MultiwayLeave.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMultiwayLeave: SystemSound { all[142] }
+    public static var inCallSystemSoundMultiwayLeave: SystemSound { all[146] }
 
     /// `1265` · `/System/Library/Audio/UISounds/multiway_invitation.caf` · VCGroupInvitation_Alert
     ///
     /// Confidence: medium.
-    public static var vcGroupInvitationAlert: SystemSound { all[143] }
+    public static var vcGroupInvitationAlert: SystemSound { all[147] }
 
     /// `1270` · `/System/Library/Audio/UISounds/nano/PushToTalkJoined.caf` · PushToTalkJoined
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkJoined: SystemSound { all[144] }
+    public static var pushToTalkJoined: SystemSound { all[148] }
 
     /// `1271` · `/System/Library/Audio/UISounds/nano/PushToTalkLeft.caf` · PushToTalkLeft
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkLeft: SystemSound { all[145] }
+    public static var pushToTalkLeft: SystemSound { all[149] }
 
     /// `1272` · `/System/Library/Audio/UISounds/nano/PushToTalkUnmute.caf` · PushToTalkUnmute
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkUnmute: SystemSound { all[146] }
+    public static var pushToTalkUnmute: SystemSound { all[150] }
 
     /// `1273` · `/System/Library/Audio/UISounds/nano/PushToTalkMute.caf` · PushToTalkMute
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkMute: SystemSound { all[147] }
+    public static var pushToTalkMute: SystemSound { all[151] }
 
     /// `1274` · `/System/Library/Audio/UISounds/nano/PushToTalkUnmuteFail.caf` · PushToTalkUnmuteFail
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkUnmuteFail: SystemSound { all[148] }
+    public static var pushToTalkUnmuteFail: SystemSound { all[152] }
 
     /// `1275` · `/System/Library/Audio/UISounds/nano/SenderConfirmation.caf` · IDCard_Sender_Confirmation
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var idCardSenderConfirmation: SystemSound { all[149] }
+    public static var idCardSenderConfirmation: SystemSound { all[153] }
 
     /// `1276` · `/System/Library/Audio/UISounds/nano/ReceiverConfirmation.caf` · IDCard_Receiver_Confirmation
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var idCardReceiverConfirmation: SystemSound { all[150] }
+    public static var idCardReceiverConfirmation: SystemSound { all[154] }
 
     /// `1277` · `/System/Library/Audio/UISounds/nano/ReceiverConnect.caf` · IDCard_Receiver_Connect
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var idCardReceiverConnect: SystemSound { all[151] }
+    public static var idCardReceiverConnect: SystemSound { all[155] }
 
     /// `1278` · DictationBegin
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var dictationBegin: SystemSound { all[152] }
+    public static var dictationBegin: SystemSound { all[156] }
 
     /// `1279` · DictationCancel
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var dictationCancel: SystemSound { all[153] }
+    public static var dictationCancel: SystemSound { all[157] }
 
     /// `1280` · DictationConfirm
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var dictationConfirm: SystemSound { all[154] }
+    public static var dictationConfirm: SystemSound { all[158] }
 
     /// `1281` · `/System/Library/Audio/UISounds/RemoteAttentionRequest_Alert.caf` · RemoteAttentionRequest_Alert
     ///
     /// Confidence: medium. Available since iOS 18.2.
     @available(iOS 18.2, *)
-    public static var remoteAttentionRequestAlert: SystemSound { all[155] }
+    public static var remoteAttentionRequestAlert: SystemSound { all[159] }
 
     /// `1300` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · SystemSoundPreview_IgnoreRingerSwitch
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to Voicemail.caf; p-x9 maps it to sms-received1.caf. Verify on device. The iOS 7 file Voicemail.caf no longer exists (iOS 17-27 dumps).
-    public static var systemSoundPreviewIgnoreRingerSwitchSmsReceived1: SystemSound { all[156] }
+    public static var systemSoundPreviewIgnoreRingerSwitchSmsReceived1: SystemSound { all[160] }
 
     /// `1301` · `/System/Library/Audio/UISounds/ReceivedMessage.caf` · SystemSoundPreview_IgnoreRingerSwitch
     ///
     /// Confidence: medium.
     /// - Note: Category differs from the iOS 7 table.
-    public static var systemSoundPreviewIgnoreRingerSwitchReceivedMessage: SystemSound { all[157] }
+    public static var systemSoundPreviewIgnoreRingerSwitchReceivedMessage: SystemSound { all[161] }
 
     /// `1302` · `/System/Library/Audio/UISounds/new-mail.caf` · SystemSoundPreview_IgnoreRingerSwitch
     ///
     /// Confidence: medium.
     /// - Note: Category differs from the iOS 7 table.
-    public static var systemSoundPreviewIgnoreRingerSwitchNewMail: SystemSound { all[158] }
+    public static var systemSoundPreviewIgnoreRingerSwitchNewMail: SystemSound { all[162] }
 
     /// `1303` · `/System/Library/Audio/UISounds/mail-sent.caf` · SystemSoundPreview_IgnoreRingerSwitch
     ///
     /// Confidence: medium.
     /// - Note: Category differs from the iOS 7 table.
-    public static var systemSoundPreviewIgnoreRingerSwitchMailSent: SystemSound { all[159] }
+    public static var systemSoundPreviewIgnoreRingerSwitchMailSent: SystemSound { all[163] }
 
     /// `1304` · `/System/Library/Audio/UISounds/alarm.caf` · SystemSoundPreview_IgnoreRingerSwitch
     ///
     /// Confidence: medium.
     /// - Note: Category differs from the iOS 7 table.
-    public static var systemSoundPreviewIgnoreRingerSwitchAlarm: SystemSound { all[160] }
+    public static var systemSoundPreviewIgnoreRingerSwitchAlarm: SystemSound { all[164] }
 
     /// `1305` · `/System/Library/Audio/UISounds/lock.caf` · SystemSoundPreview
     ///
     /// Confidence: high.
-    public static var systemSoundPreviewLock: SystemSound { all[161] }
+    public static var systemSoundPreviewLock: SystemSound { all[165] }
 
     /// `1306` · `/System/Library/Audio/UISounds/key_press_click.caf` · KeyPressClickPreview
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to Tock.caf; p-x9 maps it to key_press_click.caf. Verify on device.
-    public static var keyPressClickPreview: SystemSound { all[162] }
+    public static var keyPressClickPreview: SystemSound { all[166] }
 
     /// `1307` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived1: SystemSound { all[163] }
+    public static var smsReceivedSelectionSmsReceived1: SystemSound { all[167] }
 
     /// `1308` · `/System/Library/Audio/UISounds/sms-received2.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived2: SystemSound { all[164] }
+    public static var smsReceivedSelectionSmsReceived2: SystemSound { all[168] }
 
     /// `1309` · `/System/Library/Audio/UISounds/sms-received3.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived3: SystemSound { all[165] }
+    public static var smsReceivedSelectionSmsReceived3: SystemSound { all[169] }
 
     /// `1310` · `/System/Library/Audio/UISounds/sms-received4.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived4: SystemSound { all[166] }
+    public static var smsReceivedSelectionSmsReceived4: SystemSound { all[170] }
 
     /// `1311` · SMSReceived_Vibrate
     ///
     /// Confidence: high.
-    public static var smsReceivedVibrate1311: SystemSound { all[167] }
+    public static var smsReceivedVibrate1311: SystemSound { all[171] }
 
     /// `1312` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived11312: SystemSound { all[168] }
+    public static var smsReceivedSelectionSmsReceived11312: SystemSound { all[172] }
 
     /// `1313` · `/System/Library/Audio/UISounds/sms-received5.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived5: SystemSound { all[169] }
+    public static var smsReceivedSelectionSmsReceived5: SystemSound { all[173] }
 
     /// `1314` · `/System/Library/Audio/UISounds/sms-received6.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSmsReceived6: SystemSound { all[170] }
+    public static var smsReceivedSelectionSmsReceived6: SystemSound { all[174] }
 
     /// `1315` · `/System/Library/Audio/UISounds/nano/sms-received1.caf` · SystemSoundPreview
     ///
     /// Confidence: low.
     /// - Note: iOS 7 table maps this ID to Voicemail.caf; p-x9 maps it to sms-received1.caf. Verify on device. The iOS 7 file Voicemail.caf no longer exists (iOS 17-27 dumps).
-    public static var systemSoundPreviewSmsReceived1: SystemSound { all[171] }
+    public static var systemSoundPreviewSmsReceived1: SystemSound { all[175] }
 
     /// `1317` · `/System/Library/Audio/UISounds/alarm.caf` · SystemSoundPreview_IgnoreRingerSwitch
     ///
     /// Confidence: medium.
-    public static var systemSoundPreviewIgnoreRingerSwitchAlarm1317: SystemSound { all[172] }
+    public static var systemSoundPreviewIgnoreRingerSwitchAlarm1317: SystemSound { all[176] }
 
     /// `1318` · `/System/Library/Audio/UISounds/Swish.caf` · SystemSoundPreview_IgnoreRingerSwitch_NoVibe
     ///
     /// Confidence: medium.
-    public static var systemSoundPreviewIgnoreRingerSwitchNoVibe: SystemSound { all[173] }
+    public static var systemSoundPreviewIgnoreRingerSwitchNoVibe: SystemSound { all[177] }
 
     /// `1320` · `/System/Library/Audio/UISounds/New/Anticipate.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionAnticipate: SystemSound { all[174] }
+    public static var smsReceivedSelectionAnticipate: SystemSound { all[178] }
 
     /// `1321` · `/System/Library/Audio/UISounds/New/Bloom.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionBloom: SystemSound { all[175] }
+    public static var smsReceivedSelectionBloom: SystemSound { all[179] }
 
     /// `1322` · `/System/Library/Audio/UISounds/New/Calypso.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionCalypso: SystemSound { all[176] }
+    public static var smsReceivedSelectionCalypso: SystemSound { all[180] }
 
     /// `1323` · `/System/Library/Audio/UISounds/New/Choo_Choo.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionChooChoo: SystemSound { all[177] }
+    public static var smsReceivedSelectionChooChoo: SystemSound { all[181] }
 
     /// `1324` · `/System/Library/Audio/UISounds/New/Descent.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionDescent: SystemSound { all[178] }
+    public static var smsReceivedSelectionDescent: SystemSound { all[182] }
 
     /// `1325` · `/System/Library/Audio/UISounds/New/Fanfare.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionFanfare: SystemSound { all[179] }
+    public static var smsReceivedSelectionFanfare: SystemSound { all[183] }
 
     /// `1326` · `/System/Library/Audio/UISounds/New/Ladder.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionLadder: SystemSound { all[180] }
+    public static var smsReceivedSelectionLadder: SystemSound { all[184] }
 
     /// `1327` · `/System/Library/Audio/UISounds/New/Minuet.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionMinuet: SystemSound { all[181] }
+    public static var smsReceivedSelectionMinuet: SystemSound { all[185] }
 
     /// `1328` · `/System/Library/Audio/UISounds/New/News_Flash.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionNewsFlash: SystemSound { all[182] }
+    public static var smsReceivedSelectionNewsFlash: SystemSound { all[186] }
 
     /// `1329` · `/System/Library/Audio/UISounds/New/Noir.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionNoir: SystemSound { all[183] }
+    public static var smsReceivedSelectionNoir: SystemSound { all[187] }
 
     /// `1330` · `/System/Library/Audio/UISounds/New/Sherwood_Forest.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSherwoodForest: SystemSound { all[184] }
+    public static var smsReceivedSelectionSherwoodForest: SystemSound { all[188] }
 
     /// `1331` · `/System/Library/Audio/UISounds/New/Spell.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSpell: SystemSound { all[185] }
+    public static var smsReceivedSelectionSpell: SystemSound { all[189] }
 
     /// `1332` · `/System/Library/Audio/UISounds/New/Suspense.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionSuspense: SystemSound { all[186] }
+    public static var smsReceivedSelectionSuspense: SystemSound { all[190] }
 
     /// `1333` · `/System/Library/Audio/UISounds/New/Telegraph.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionTelegraph: SystemSound { all[187] }
+    public static var smsReceivedSelectionTelegraph: SystemSound { all[191] }
 
     /// `1334` · `/System/Library/Audio/UISounds/New/Tiptoes.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionTiptoes: SystemSound { all[188] }
+    public static var smsReceivedSelectionTiptoes: SystemSound { all[192] }
 
     /// `1335` · `/System/Library/Audio/UISounds/New/Typewriters.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionTypewriters: SystemSound { all[189] }
+    public static var smsReceivedSelectionTypewriters: SystemSound { all[193] }
 
     /// `1336` · `/System/Library/Audio/UISounds/New/Update.caf` · SMSReceived_Selection
     ///
     /// Confidence: high.
-    public static var smsReceivedSelectionUpdate: SystemSound { all[190] }
+    public static var smsReceivedSelectionUpdate: SystemSound { all[194] }
 
     /// `1340` · `/System/Library/Audio/UISounds/PINEnterDigit_AX.caf` · PINEnterDigit_AX
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var pinEnterDigitAX: SystemSound { all[191] }
+    public static var pinEnterDigitAX: SystemSound { all[195] }
 
     /// `1341` · `/System/Library/Audio/UISounds/PINDelete_AX.caf` · PINDelete_AX
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var pinDeleteAX: SystemSound { all[192] }
+    public static var pinDeleteAX: SystemSound { all[196] }
 
     /// `1342` · `/System/Library/Audio/UISounds/PINSubmit_AX.caf` · PINSubmit_AX
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var pinSubmitAX: SystemSound { all[193] }
+    public static var pinSubmitAX: SystemSound { all[197] }
 
     /// `1343` · `/System/Library/Audio/UISounds/PINUnexpected.caf` · PINUnexpected
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var pinUnexpected: SystemSound { all[194] }
+    public static var pinUnexpected: SystemSound { all[198] }
 
     /// `1344` · `/System/Library/Audio/UISounds/PINEnterDigit.caf` · PINEnterDigit
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var pinEnterDigit: SystemSound { all[195] }
+    public static var pinEnterDigit: SystemSound { all[199] }
 
     /// `1345` · `/System/Library/Audio/UISounds/PINDelete.caf` · PINDelete
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var pinDelete: SystemSound { all[196] }
+    public static var pinDelete: SystemSound { all[200] }
 
     /// `1346` · `/System/Library/Audio/UISounds/NFCCardProvisioned.caf` · NFCCardProvisioned(iOS26~)
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var nfcCardProvisioned: SystemSound { all[197] }
+    public static var nfcCardProvisioned: SystemSound { all[201] }
 
     /// `1347` · `/System/Library/Audio/UISounds/NFCCardComplete.caf` · NFCCardComplete(iOS26~)
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var nfcCardComplete: SystemSound { all[198] }
+    public static var nfcCardComplete: SystemSound { all[202] }
 
     /// `1348` · `/System/Library/Audio/UISounds/NFCCardError.caf` · NFCCardError(iOS26~)
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var nfcCardError: SystemSound { all[199] }
+    public static var nfcCardError: SystemSound { all[203] }
 
     /// `1350` · RingerVibeChanged
     ///
     /// Confidence: high.
-    public static var ringerVibeChanged: SystemSound { all[200] }
+    public static var ringerVibeChanged: SystemSound { all[204] }
 
     /// `1351` · SilentVibeChanged
     ///
     /// Confidence: high.
-    public static var silentVibeChanged: SystemSound { all[201] }
+    public static var silentVibeChanged: SystemSound { all[205] }
 
     /// `1352` · VibrateAlways
     ///
     /// Confidence: medium.
-    public static var vibrateAlways: SystemSound { all[202] }
+    public static var vibrateAlways: SystemSound { all[206] }
 
     /// `1360` · `/System/Library/Audio/UISounds/connect_power.caf`
     ///
     /// Confidence: medium.
-    public static var connectPower: SystemSound { all[203] }
+    public static var connectPower: SystemSound { all[207] }
 
     /// `1361` · `/System/Library/Audio/UISounds/connect_power.caf`
     ///
     /// Confidence: medium.
-    public static var connectPower1361: SystemSound { all[204] }
+    public static var connectPower1361: SystemSound { all[208] }
 
     /// `1362` · `/System/Library/Audio/UISounds/nano/HeadphoneAudioExposureLimitExceeded.caf` · HeadphoneAudioExposureLimitExceeded
     ///
     /// Confidence: medium.
-    public static var headphoneAudioExposureLimitExceeded: SystemSound { all[205] }
+    public static var headphoneAudioExposureLimitExceeded: SystemSound { all[209] }
 
     /// `1363` · `/System/Library/Audio/UISounds/nano/HealthNotificationUrgent.caf` · HealthNotificationUrgent
     ///
     /// Confidence: medium.
-    public static var healthNotificationUrgent: SystemSound { all[206] }
+    public static var healthNotificationUrgent: SystemSound { all[210] }
 
     /// `1364` · `/System/Library/Audio/UISounds/nano/MicMute.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMicMute: SystemSound { all[207] }
+    public static var inCallSystemSoundMicMute: SystemSound { all[211] }
 
     /// `1365` · `/System/Library/Audio/UISounds/nano/MicUnmute.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMicUnmute: SystemSound { all[208] }
+    public static var inCallSystemSoundMicUnmute: SystemSound { all[212] }
 
     /// `1366` · `/System/Library/Audio/UISounds/nano/MicUnmuteFail.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMicUnmuteFail: SystemSound { all[209] }
+    public static var inCallSystemSoundMicUnmuteFail: SystemSound { all[213] }
 
     /// `1367` · `/System/Library/Audio/UISounds/nano/ScreenSharingStarted.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundScreenSharingStarted: SystemSound { all[210] }
+    public static var inCallSystemSoundScreenSharingStarted: SystemSound { all[214] }
 
     /// `1368` · `/System/Library/Audio/UISounds/nano/MediaPaused.caf`
     ///
     /// Confidence: medium.
-    public static var mediaPaused: SystemSound { all[211] }
+    public static var mediaPaused: SystemSound { all[215] }
 
     /// `1369` · `/System/Library/Audio/UISounds/nano/MediaHandoff.caf`
     ///
     /// Confidence: medium.
-    public static var mediaHandoff: SystemSound { all[212] }
+    public static var mediaHandoff: SystemSound { all[216] }
 
     /// `1370` · `/System/Library/Audio/UISounds/NavigationGenericManeuver.caf` · NavigationGenericManeuver
     ///
     /// Confidence: medium.
-    public static var navigationGenericManeuver: SystemSound { all[213] }
+    public static var navigationGenericManeuver: SystemSound { all[217] }
 
     /// `1371` · `/System/Library/Audio/UISounds/nano/HeadGesturesDoubleNod.caf`
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var headGesturesDoubleNod: SystemSound { all[214] }
+    public static var headGesturesDoubleNod: SystemSound { all[218] }
 
     /// `1372` · `/System/Library/Audio/UISounds/nano/HeadGesturesDoubleShake.caf`
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var headGesturesDoubleShake: SystemSound { all[215] }
+    public static var headGesturesDoubleShake: SystemSound { all[219] }
 
     /// `1373` · `/System/Library/Audio/UISounds/nano/HeadGesturesPartialNod.caf`
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var headGesturesPartialNod: SystemSound { all[216] }
+    public static var headGesturesPartialNod: SystemSound { all[220] }
 
     /// `1374` · `/System/Library/Audio/UISounds/nano/HeadGesturesPartialShake.caf`
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var headGesturesPartialShake: SystemSound { all[217] }
+    public static var headGesturesPartialShake: SystemSound { all[221] }
+
+    /// `1381` · HomeDeviceHourlyChime
+    ///
+    /// Confidence: medium. Available since iOS 27.0.
+    /// - Note: Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16). No sound file is listed for this ID.
+    @available(iOS 27.0, *)
+    public static var homeDeviceHourlyChime: SystemSound { all[222] }
 
     /// `1390` · `/System/Library/Audio/UISounds/LiveTranslationStart.caf` · PersonalTranslator
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var personalTranslatorLiveTranslationStart: SystemSound { all[218] }
+    public static var personalTranslatorLiveTranslationStart: SystemSound { all[223] }
 
     /// `1391` · `/System/Library/Audio/UISounds/LiveTranslationStop.caf` · PersonalTranslator
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var personalTranslatorLiveTranslationStop: SystemSound { all[219] }
+    public static var personalTranslatorLiveTranslationStop: SystemSound { all[224] }
 
     /// `1392` · `/System/Library/Audio/UISounds/DualBudLongPressFailure.caf` · PersonalTranslator
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var personalTranslatorDualBudLongPressFailure: SystemSound { all[220] }
+    public static var personalTranslatorDualBudLongPressFailure: SystemSound { all[225] }
 
     /// `1393` · `/System/Library/Audio/UISounds/nano/ScreenCapture.caf` · CameraShutterAlt
     ///
     /// Confidence: medium.
-    public static var cameraShutterAltScreenCapture: SystemSound { all[221] }
+    public static var cameraShutterAltScreenCapture: SystemSound { all[226] }
 
     /// `1394` · `/System/Library/Audio/UISounds/payment_success.caf` · PaymentSuccess
     ///
     /// Confidence: medium.
-    public static var paymentSuccessPaymentSuccess: SystemSound { all[222] }
+    public static var paymentSuccessPaymentSuccess: SystemSound { all[227] }
 
     /// `1395` · `/System/Library/Audio/UISounds/payment_failure.caf` · PaymentFailure
     ///
     /// Confidence: medium.
-    public static var paymentFailurePaymentFailure: SystemSound { all[223] }
+    public static var paymentFailurePaymentFailure: SystemSound { all[228] }
 
     /// `1396` · `/System/Library/Audio/UISounds/acknowledgment_sent.caf`
     ///
     /// Confidence: medium.
-    public static var acknowledgmentSent: SystemSound { all[224] }
+    public static var acknowledgmentSent: SystemSound { all[229] }
 
     /// `1397` · `/System/Library/Audio/UISounds/acknowledgment_received.caf`
     ///
     /// Confidence: medium.
-    public static var acknowledgmentReceived: SystemSound { all[225] }
+    public static var acknowledgmentReceived: SystemSound { all[230] }
 
     /// `1398` · `/System/Library/Audio/UISounds/nfc_scan_failure.caf` · PaymentFailure
     ///
     /// Confidence: medium.
-    public static var paymentFailureNfcScanFailure: SystemSound { all[226] }
+    public static var paymentFailureNfcScanFailure: SystemSound { all[231] }
 
     /// `1400` · `/System/Library/Audio/UISounds/nano/Notification_Haptic.caf` · Notification_Haptic
     ///
     /// Confidence: medium.
-    public static var notificationHaptic: SystemSound { all[227] }
+    public static var notificationHaptic: SystemSound { all[232] }
 
     /// `1401` · `/System/Library/Audio/UISounds/nano/Ringtone_US_Haptic.caf` · Ringtone_US_Haptic
     ///
     /// Confidence: medium.
-    public static var ringtoneUSHaptic: SystemSound { all[228] }
+    public static var ringtoneUSHaptic: SystemSound { all[233] }
 
     /// `1402` · `/System/Library/Audio/UISounds/nano/Ringtone_UK_Haptic.caf` · Ringtone_UK_Haptic
     ///
     /// Confidence: medium.
-    public static var ringtoneUKHaptic: SystemSound { all[229] }
+    public static var ringtoneUKHaptic: SystemSound { all[234] }
 
     /// `1403` · `/System/Library/Audio/UISounds/nano/Alarm_Haptic.caf` · Alarm_Haptic
     ///
     /// Confidence: medium.
-    public static var alarmHaptic: SystemSound { all[230] }
+    public static var alarmHaptic: SystemSound { all[235] }
 
     /// `1404` · `/System/Library/Audio/UISounds/nano/SiriStart_Haptic.caf` · SiriStart_Haptic
     ///
     /// Confidence: medium.
-    public static var siriStartHaptic: SystemSound { all[231] }
+    public static var siriStartHaptic: SystemSound { all[236] }
 
     /// `1405` · `/System/Library/Audio/UISounds/nano/SiriStopSuccess_Haptic.caf` · SiriStopSuccess_Haptic
     ///
     /// Confidence: medium.
-    public static var siriStopSuccessHaptic: SystemSound { all[232] }
+    public static var siriStopSuccessHaptic: SystemSound { all[237] }
 
     /// `1406` · `/System/Library/Audio/UISounds/nano/SiriStopFailure_Haptic.caf` · SiriStopFailure_Haptic
     ///
     /// Confidence: medium.
-    public static var siriStopFailureHaptic: SystemSound { all[233] }
+    public static var siriStopFailureHaptic: SystemSound { all[238] }
 
     /// `1407` · `/System/Library/Audio/UISounds/nano/Stockholm_Haptic.caf` · Stockholm_Haptic
     ///
     /// Confidence: medium.
-    public static var stockholmHaptic: SystemSound { all[234] }
+    public static var stockholmHaptic: SystemSound { all[239] }
 
     /// `1408` · `/System/Library/Audio/UISounds/nano/Beat_Haptic.caf` · Beat_Haptic
     ///
     /// Confidence: medium.
-    public static var beatHaptic: SystemSound { all[235] }
+    public static var beatHaptic: SystemSound { all[240] }
 
     /// `1409` · RubberBand_Haptic
     ///
     /// Confidence: medium.
-    public static var rubberBandHaptic: SystemSound { all[236] }
+    public static var rubberBandHaptic: SystemSound { all[241] }
 
     /// `1410` · `/System/Library/Audio/UISounds/nano/DoNotDisturb_Haptic.caf` · DoNotDisturb_Haptic
     ///
     /// Confidence: medium.
-    public static var doNotDisturbHaptic: SystemSound { all[237] }
+    public static var doNotDisturbHaptic: SystemSound { all[242] }
 
     /// `1411` · UIConfirmation_Haptic
     ///
     /// Confidence: medium.
-    public static var uiConfirmationHaptic: SystemSound { all[238] }
+    public static var uiConfirmationHaptic: SystemSound { all[243] }
 
     /// `1412` · ET_Heartbeat_Haptic
     ///
     /// Confidence: medium.
-    public static var etHeartbeatHaptic: SystemSound { all[239] }
+    public static var etHeartbeatHaptic: SystemSound { all[244] }
 
     /// `1413` · `/System/Library/Audio/UISounds/nano/Timer_Haptic.caf` · Timer_Haptic
     ///
     /// Confidence: medium.
-    public static var timerHaptic: SystemSound { all[240] }
+    public static var timerHaptic: SystemSound { all[245] }
 
     /// `1414` · `/System/Library/Audio/UISounds/nano/NavigationLeftTurn_Haptic.caf` · NavigationLeftTurn_Haptic
     ///
     /// Confidence: medium.
-    public static var navigationLeftTurnHaptic: SystemSound { all[241] }
+    public static var navigationLeftTurnHaptic: SystemSound { all[246] }
 
     /// `1415` · `/System/Library/Audio/UISounds/nano/NavigationRightTurn_Haptic.caf` · NavigationRightTurn_Haptic
     ///
     /// Confidence: medium.
-    public static var navigationRightTurnHaptic: SystemSound { all[242] }
+    public static var navigationRightTurnHaptic: SystemSound { all[247] }
 
     /// `1416` · `/System/Library/Audio/UISounds/nano/Detent_Haptic.caf` · Detent_Haptic
     ///
     /// Confidence: medium.
-    public static var detentHaptic: SystemSound { all[243] }
+    public static var detentHaptic: SystemSound { all[248] }
 
     /// `1417` · `/System/Library/Audio/UISounds/nano/NavigationGenericManeuver_Haptic.caf` · NavigationGenericManeuver_Haptic
     ///
     /// Confidence: medium.
-    public static var navigationGenericManeuverHaptic: SystemSound { all[244] }
+    public static var navigationGenericManeuverHaptic: SystemSound { all[249] }
 
     /// `1418` · `/System/Library/Audio/UISounds/nano/CameraCountdownTick_Haptic.caf` · CameraCountdownTick_Haptic
     ///
     /// Confidence: medium.
-    public static var cameraCountdownTickHaptic: SystemSound { all[245] }
+    public static var cameraCountdownTickHaptic: SystemSound { all[250] }
 
     /// `1419` · `/System/Library/Audio/UISounds/nano/CameraCountdownImminent_Haptic.caf` · CameraCountdownImminent_Haptic
     ///
     /// Confidence: medium.
-    public static var cameraCountdownImminentHaptic: SystemSound { all[246] }
+    public static var cameraCountdownImminentHaptic: SystemSound { all[251] }
 
     /// `1420` · `/System/Library/Audio/UISounds/nano/ET_RemoteTap_Receive_Haptic.caf` · ET_RemoteTap_Receive_Haptic
     ///
     /// Confidence: medium.
-    public static var etRemoteTapReceiveHaptic: SystemSound { all[247] }
+    public static var etRemoteTapReceiveHaptic: SystemSound { all[252] }
 
     /// `1421` · `/System/Library/Audio/UISounds/nano/ET_RemoteTap_Send_Haptic.caf` · ET_RemoteTap_Send_Haptic
     ///
     /// Confidence: medium.
-    public static var etRemoteTapSendHaptic: SystemSound { all[248] }
+    public static var etRemoteTapSendHaptic: SystemSound { all[253] }
 
     /// `1422` · `/System/Library/Audio/UISounds/nano/ET_BeginNotification_Haptic.caf` · ET_BeginNotification_Haptic
     ///
     /// Confidence: medium.
-    public static var etBeginNotificationHaptic: SystemSound { all[249] }
+    public static var etBeginNotificationHaptic: SystemSound { all[254] }
 
     /// `1423` · DoNotDisturbExpiryWarning_Haptic
     ///
     /// Confidence: medium.
-    public static var doNotDisturbExpiryWarningHaptic: SystemSound { all[250] }
+    public static var doNotDisturbExpiryWarningHaptic: SystemSound { all[255] }
 
     /// `1424` · `/System/Library/Audio/UISounds/nano/StockholmActive_Haptic.caf` · StockholmActive_Haptic
     ///
     /// Confidence: medium.
-    public static var stockholmActiveHaptic: SystemSound { all[251] }
+    public static var stockholmActiveHaptic: SystemSound { all[256] }
 
     /// `1425` · `/System/Library/Audio/UISounds/nano/StockholmActiveSingleCycle_Haptic.caf` · StockholmActiveSingleCycle_Haptic
     ///
     /// Confidence: medium.
-    public static var stockholmActiveSingleCycleHaptic: SystemSound { all[252] }
+    public static var stockholmActiveSingleCycleHaptic: SystemSound { all[257] }
 
     /// `1426` · `/System/Library/Audio/UISounds/nano/StockholmFailure_Haptic.caf` · StockholmFailure_Haptic
     ///
     /// Confidence: medium.
-    public static var stockholmFailureHaptic: SystemSound { all[253] }
+    public static var stockholmFailureHaptic: SystemSound { all[258] }
 
     /// `1427` · `/System/Library/Audio/UISounds/nano/SedentaryTimer_Haptic.caf` · SedentaryTimer_Haptic
     ///
     /// Confidence: medium.
-    public static var sedentaryTimerHaptic: SystemSound { all[254] }
+    public static var sedentaryTimerHaptic: SystemSound { all[259] }
 
     /// `1428` · `/System/Library/Audio/UISounds/nano/HourlyChime_Haptic.caf` · HourlyChime_Haptic
     ///
     /// Confidence: medium.
-    public static var hourlyChimeHaptic: SystemSound { all[255] }
+    public static var hourlyChimeHaptic: SystemSound { all[260] }
 
     /// `1429` · `/System/Library/Audio/UISounds/nano/Preview_AudioAndHaptic.caf` · Preview_AudioAndHaptic
     ///
     /// Confidence: medium.
-    public static var previewAudioAndHaptic: SystemSound { all[256] }
+    public static var previewAudioAndHaptic: SystemSound { all[261] }
 
     /// `1430` · `/System/Library/Audio/UISounds/nano/Alert_ActivityGoalAttained_Haptic.caf` · Alert_ActivityGoalAttained_Haptic
     ///
     /// Confidence: medium.
-    public static var alertActivityGoalAttainedHaptic: SystemSound { all[257] }
+    public static var alertActivityGoalAttainedHaptic: SystemSound { all[262] }
 
     /// `1431` · `/System/Library/Audio/UISounds/nano/Alert_ActivityGoalBehind_Haptic.caf` · Alert_ActivityGoalBehind_Haptic
     ///
     /// Confidence: medium.
-    public static var alertActivityGoalBehindHaptic: SystemSound { all[258] }
+    public static var alertActivityGoalBehindHaptic: SystemSound { all[263] }
 
     /// `1432` · `/System/Library/Audio/UISounds/nano/Alert_ActivityGoalClose_Haptic.caf` · Alert_ActivityGoalClose_Haptic
     ///
     /// Confidence: medium.
-    public static var alertActivityGoalCloseHaptic: SystemSound { all[259] }
+    public static var alertActivityGoalCloseHaptic: SystemSound { all[264] }
 
     /// `1433` · `/System/Library/Audio/UISounds/nano/Alert_BatteryLow_10p_Haptic.caf` · Alert_BatteryLow_Haptic
     ///
     /// Confidence: medium.
-    public static var alertBatteryLowHaptic: SystemSound { all[260] }
+    public static var alertBatteryLowHaptic: SystemSound { all[265] }
 
     /// `1434` · `/System/Library/Audio/UISounds/nano/Alert_BatteryLow_5p_Haptic.caf` · Alert_BatteryCritical_Haptic
     ///
     /// Confidence: medium.
-    public static var alertBatteryCriticalHaptic: SystemSound { all[261] }
+    public static var alertBatteryCriticalHaptic: SystemSound { all[266] }
 
     /// `1435` · `/System/Library/Audio/UISounds/nano/Alert_Calendar_Haptic.caf` · Alert_Calendar_Haptic
     ///
     /// Confidence: medium.
-    public static var alertCalendarHaptic: SystemSound { all[262] }
+    public static var alertCalendarHaptic: SystemSound { all[267] }
 
     /// `1436` · `/System/Library/Audio/UISounds/nano/Notification_Haptic.caf` · Alert_Mail_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMailHaptic: SystemSound { all[263] }
+    public static var alertMailHaptic: SystemSound { all[268] }
 
     /// `1437` · `/System/Library/Audio/UISounds/nano/Notification_Haptic.caf` · Alert_Messages_1_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMessages1Haptic: SystemSound { all[264] }
+    public static var alertMessages1Haptic: SystemSound { all[269] }
 
     /// `1438` · `/System/Library/Audio/UISounds/nano/Notification_Haptic.caf` · Alert_Messages_2_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMessages2Haptic: SystemSound { all[265] }
+    public static var alertMessages2Haptic: SystemSound { all[270] }
 
     /// `1439` · `/System/Library/Audio/UISounds/nano/Notification_Haptic.caf` · Alert_Messages_3_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMessages3Haptic: SystemSound { all[266] }
+    public static var alertMessages3Haptic: SystemSound { all[271] }
 
     /// `1440` · `/System/Library/Audio/UISounds/nano/Alert_PassbookBalance_Haptic.caf` · Alert_PassbookBalance_Haptic
     ///
     /// Confidence: medium.
-    public static var alertPassbookBalanceHaptic: SystemSound { all[267] }
+    public static var alertPassbookBalanceHaptic: SystemSound { all[272] }
 
     /// `1441` · `/System/Library/Audio/UISounds/nano/Alert_PassbookGeofence_Haptic.caf` · Alert_PassbookGeofence_Haptic
     ///
     /// Confidence: medium.
-    public static var alertPassbookGeofenceHaptic: SystemSound { all[268] }
+    public static var alertPassbookGeofenceHaptic: SystemSound { all[273] }
 
     /// `1442` · `/System/Library/Audio/UISounds/nano/Alert_PhotostreamActivity_Haptic.caf` · Alert_PhotostreamActivity_Haptic
     ///
     /// Confidence: medium.
-    public static var alertPhotostreamActivityHaptic: SystemSound { all[269] }
+    public static var alertPhotostreamActivityHaptic: SystemSound { all[274] }
 
     /// `1443` · `/System/Library/Audio/UISounds/nano/Alert_ReminderDue_Haptic.caf` · Alert_ReminderDue_Haptic
     ///
     /// Confidence: medium.
-    public static var alertReminderDueHaptic: SystemSound { all[270] }
+    public static var alertReminderDueHaptic: SystemSound { all[275] }
 
     /// `1444` · `/System/Library/Audio/UISounds/nano/Notification_Haptic.caf` · Alert_Voicemail_Haptic
     ///
     /// Confidence: medium.
-    public static var alertVoicemailHaptic: SystemSound { all[271] }
+    public static var alertVoicemailHaptic: SystemSound { all[276] }
 
     /// `1445` · `/System/Library/Audio/UISounds/nano/Alert_WalkieTalkie_Haptic.caf` · Alert_WalkieTalkie_Haptic
     ///
     /// Confidence: medium.
-    public static var alertWalkieTalkieHaptic: SystemSound { all[272] }
+    public static var alertWalkieTalkieHaptic: SystemSound { all[277] }
 
     /// `1446` · `/System/Library/Audio/UISounds/nano/BatteryMagsafe_Haptic.caf` · BatteryMagsafe_Haptic
     ///
     /// Confidence: medium.
-    public static var batteryMagsafeHaptic: SystemSound { all[273] }
+    public static var batteryMagsafeHaptic: SystemSound { all[278] }
 
     /// `1447` · `/System/Library/Audio/UISounds/nano/BuddyPairingFailure_Haptic.caf` · BuddyPairingFailure_Haptic
     ///
     /// Confidence: medium.
-    public static var buddyPairingFailureHaptic: SystemSound { all[274] }
+    public static var buddyPairingFailureHaptic: SystemSound { all[279] }
 
     /// `1448` · `/System/Library/Audio/UISounds/nano/BuddyPairingSuccess_Haptic.caf` · BuddyPairingSuccess_Haptic
     ///
     /// Confidence: medium.
-    public static var buddyPairingSuccessHaptic: SystemSound { all[275] }
+    public static var buddyPairingSuccessHaptic: SystemSound { all[280] }
 
     /// `1449` · `/System/Library/Audio/UISounds/nano/CameraShutter_Haptic.caf` · CameraShutter_Haptic
     ///
     /// Confidence: medium.
-    public static var cameraShutterHapticCameraShutterHaptic: SystemSound { all[276] }
+    public static var cameraShutterHapticCameraShutterHaptic: SystemSound { all[281] }
 
     /// `1450` · `/System/Library/Audio/UISounds/nano/Alert_MapsDirectionsInApp_Haptic.caf` · Alert_MapsDirectionsInApp_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMapsDirectionsInAppHaptic: SystemSound { all[277] }
+    public static var alertMapsDirectionsInAppHaptic: SystemSound { all[282] }
 
     /// `1451` · `/System/Library/Audio/UISounds/nano/MessagesIncoming_Haptic.caf` · MessagesIncoming_Haptic
     ///
     /// Confidence: medium.
-    public static var messagesIncomingHaptic: SystemSound { all[278] }
+    public static var messagesIncomingHaptic: SystemSound { all[283] }
 
     /// `1452` · `/System/Library/Audio/UISounds/nano/MessagesOutgoing_Haptic.caf` · MessagesOutgoing_Haptic
     ///
     /// Confidence: medium.
-    public static var messagesOutgoingHaptic: SystemSound { all[279] }
+    public static var messagesOutgoingHaptic: SystemSound { all[284] }
 
     /// `1453` · `/System/Library/Audio/UISounds/nano/OnOffPasscodeFailure_Haptic.caf` · OnOffPasscodeFailure_Haptic
     ///
     /// Confidence: medium.
-    public static var onOffPasscodeFailureHaptic: SystemSound { all[280] }
+    public static var onOffPasscodeFailureHaptic: SystemSound { all[285] }
 
     /// `1457` · OrbInvoke_Haptic
     ///
     /// Confidence: medium.
-    public static var orbInvokeHaptic: SystemSound { all[281] }
+    public static var orbInvokeHaptic: SystemSound { all[286] }
 
     /// `1458` · `/System/Library/Audio/UISounds/nano/OrbLayers_Haptic.caf` · OrbLayers_Haptic
     ///
     /// Confidence: medium.
-    public static var orbLayersHaptic: SystemSound { all[282] }
+    public static var orbLayersHaptic: SystemSound { all[287] }
 
     /// `1459` · `/System/Library/Audio/UISounds/nano/PhoneHangUp_Haptic.caf` · PhoneHangUp_Haptic
     ///
     /// Confidence: medium.
-    public static var phoneHangUpHaptic: SystemSound { all[283] }
+    public static var phoneHangUpHaptic: SystemSound { all[288] }
 
     /// `1460` · `/System/Library/Audio/UISounds/nano/PhotosZoomDetent_Haptic.caf` · PhotosZoomDetent_Haptic
     ///
     /// Confidence: medium.
-    public static var photosZoomDetentHaptic: SystemSound { all[284] }
+    public static var photosZoomDetentHaptic: SystemSound { all[289] }
 
     /// `1461` · `/System/Library/Audio/UISounds/nano/QB_Dictation_Haptic.caf` · QB_Dictation_Haptic
     ///
     /// Confidence: medium.
-    public static var qbDictationHaptic: SystemSound { all[285] }
+    public static var qbDictationHaptic: SystemSound { all[290] }
 
     /// `1462` · SpringboardEdgeUniverse_Haptic
     ///
     /// Confidence: medium.
-    public static var springboardEdgeUniverseHaptic: SystemSound { all[286] }
+    public static var springboardEdgeUniverseHaptic: SystemSound { all[291] }
 
     /// `1463` · SpringboardHardStop_Haptic
     ///
     /// Confidence: medium.
-    public static var springboardHardStopHaptic: SystemSound { all[287] }
+    public static var springboardHardStopHaptic: SystemSound { all[292] }
 
     /// `1464` · `/System/Library/Audio/UISounds/nano/StopwatchLap_Haptic.caf` · StopwatchLap_Haptic
     ///
     /// Confidence: medium.
-    public static var stopwatchLapHaptic: SystemSound { all[288] }
+    public static var stopwatchLapHaptic: SystemSound { all[293] }
 
     /// `1465` · `/System/Library/Audio/UISounds/nano/StopwatchReset_Haptic.caf` · StopwatchReset_Haptic
     ///
     /// Confidence: medium.
-    public static var stopwatchResetHaptic: SystemSound { all[289] }
+    public static var stopwatchResetHaptic: SystemSound { all[294] }
 
     /// `1466` · `/System/Library/Audio/UISounds/nano/StopwatchStart_Haptic.caf` · StopwatchStart_Haptic
     ///
     /// Confidence: medium.
-    public static var stopwatchStartHaptic: SystemSound { all[290] }
+    public static var stopwatchStartHaptic: SystemSound { all[295] }
 
     /// `1467` · `/System/Library/Audio/UISounds/nano/StopwatchStop_Haptic.caf` · StopwatchStop_Haptic
     ///
     /// Confidence: medium.
-    public static var stopwatchStopHaptic: SystemSound { all[291] }
+    public static var stopwatchStopHaptic: SystemSound { all[296] }
 
     /// `1468` · `/System/Library/Audio/UISounds/nano/TimerCancel_Haptic.caf` · TimerCancel_Haptic
     ///
     /// Confidence: medium.
-    public static var timerCancelHaptic: SystemSound { all[292] }
+    public static var timerCancelHaptic: SystemSound { all[297] }
 
     /// `1469` · `/System/Library/Audio/UISounds/nano/TimerPause_Haptic.caf` · TimerPause_Haptic
     ///
     /// Confidence: medium.
-    public static var timerPauseHaptic: SystemSound { all[293] }
+    public static var timerPauseHaptic: SystemSound { all[298] }
 
     /// `1470` · `/System/Library/Audio/UISounds/nano/TimerStart_Haptic.caf` · TimerStart_Haptic
     ///
     /// Confidence: medium.
-    public static var timerStartHaptic: SystemSound { all[294] }
+    public static var timerStartHaptic: SystemSound { all[299] }
 
     /// `1471` · `/System/Library/Audio/UISounds/nano/TimerWheelHoursDetent_Haptic.caf` · TimerWheelHoursDetent_Haptic
     ///
     /// Confidence: medium.
-    public static var timerWheelHoursDetentHaptic: SystemSound { all[295] }
+    public static var timerWheelHoursDetentHaptic: SystemSound { all[300] }
 
     /// `1472` · `/System/Library/Audio/UISounds/nano/WalkieTalkieActiveStart_Haptic.caf` · WalkieTalkieActiveStart_Haptic
     ///
     /// Confidence: medium.
-    public static var walkieTalkieActiveStartHaptic: SystemSound { all[296] }
+    public static var walkieTalkieActiveStartHaptic: SystemSound { all[301] }
 
     /// `1473` · `/System/Library/Audio/UISounds/nano/WorkoutComplete_Haptic.caf` · WorkoutComplete_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutCompleteHaptic: SystemSound { all[297] }
+    public static var workoutCompleteHaptic: SystemSound { all[302] }
 
     /// `1474` · `/System/Library/Audio/UISounds/nano/WorkoutCountdown_Haptic.caf` · WorkoutCountdown_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutCountdownHaptic: SystemSound { all[298] }
+    public static var workoutCountdownHaptic: SystemSound { all[303] }
 
     /// `1475` · `/System/Library/Audio/UISounds/nano/Alert_3rdParty_Haptic.caf` · Alert_3rdParty_Haptic
     ///
     /// Confidence: medium.
-    public static var alert3rdPartyHaptic: SystemSound { all[299] }
+    public static var alert3rdPartyHaptic: SystemSound { all[304] }
 
     /// `1476` · `/System/Library/Audio/UISounds/nano/WorkoutSelect_Haptic.caf` · WorkoutSelect_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutSelectHaptic: SystemSound { all[300] }
+    public static var workoutSelectHaptic: SystemSound { all[305] }
 
     /// `1477` · `/System/Library/Audio/UISounds/nano/WorkoutPressStart_Haptic.caf` · WorkoutPressStart_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutPressStartHaptic: SystemSound { all[301] }
+    public static var workoutPressStartHaptic: SystemSound { all[306] }
 
     /// `1478` · ClockAnalogTick_Haptic
     ///
     /// Confidence: medium.
-    public static var clockAnalogTickHaptic: SystemSound { all[302] }
+    public static var clockAnalogTickHaptic: SystemSound { all[307] }
 
     /// `1479` · `/System/Library/Audio/UISounds/nano/TimerWheelMinutesDetent_Haptic.caf` · TimerWheelMinutesDetent_Haptic
     ///
     /// Confidence: medium.
-    public static var timerWheelMinutesDetentHaptic: SystemSound { all[303] }
+    public static var timerWheelMinutesDetentHaptic: SystemSound { all[308] }
 
     /// `1480` · `/System/Library/Audio/UISounds/nano/PhoneAnswer_Haptic.caf` · PhoneAnswer_Haptic
     ///
     /// Confidence: medium.
-    public static var phoneAnswerHaptic: SystemSound { all[304] }
+    public static var phoneAnswerHaptic: SystemSound { all[309] }
 
     /// `1481` · `/System/Library/Audio/UISounds/nano/PhoneHold_Haptic.caf` · PhoneHold_Haptic
     ///
     /// Confidence: medium.
-    public static var phoneHoldHaptic: SystemSound { all[305] }
+    public static var phoneHoldHaptic: SystemSound { all[310] }
 
     /// `1482` · `/System/Library/Audio/UISounds/nano/WalkieTalkieActiveEnd_Haptic.caf` · WalkieTalkieActiveEnd_Haptic
     ///
     /// Confidence: medium.
-    public static var walkieTalkieActiveEndHaptic: SystemSound { all[306] }
+    public static var walkieTalkieActiveEndHaptic: SystemSound { all[311] }
 
     /// `1483` · UISnap_Haptic
     ///
     /// Confidence: medium.
-    public static var uiSnapHaptic: SystemSound { all[307] }
+    public static var uiSnapHaptic: SystemSound { all[312] }
 
     /// `1484` · `/System/Library/Audio/UISounds/nano/UISwitch_On_Haptic.caf` · UISwitch_On_Haptic
     ///
     /// Confidence: medium.
-    public static var uiSwitchOnHaptic: SystemSound { all[308] }
+    public static var uiSwitchOnHaptic: SystemSound { all[313] }
 
     /// `1485` · `/System/Library/Audio/UISounds/nano/UISwitch_Off_Haptic.caf` · UISwitch_Off_Haptic
     ///
     /// Confidence: medium.
-    public static var uiSwitchOffHaptic: SystemSound { all[309] }
+    public static var uiSwitchOffHaptic: SystemSound { all[314] }
 
     /// `1486` · `/System/Library/Audio/UISounds/nano/UISwipe_Haptic.caf` · UISwipe_Haptic
     ///
     /// Confidence: medium.
-    public static var uiSwipeHaptic: SystemSound { all[310] }
+    public static var uiSwipeHaptic: SystemSound { all[315] }
 
     /// `1487` · `/System/Library/Audio/UISounds/nano/SystemStartup_Haptic.caf` · SystemStartup_Haptic
     ///
     /// Confidence: medium.
-    public static var systemStartupHaptic: SystemSound { all[311] }
+    public static var systemStartupHaptic: SystemSound { all[316] }
 
     /// `1488` · `/System/Library/Audio/UISounds/nano/BuddyPairingRemoteConnection_Haptic.caf` · BuddyPairingRemoteConnection_Haptic
     ///
     /// Confidence: medium.
-    public static var buddyPairingRemoteConnectionHaptic: SystemSound { all[312] }
+    public static var buddyPairingRemoteConnectionHaptic: SystemSound { all[317] }
 
     /// `1489` · `/System/Library/Audio/UISounds/nano/BuddyPairingRemoteTap_Haptic.caf` · BuddyPairingRemoteTap_Haptic
     ///
     /// Confidence: medium.
-    public static var buddyPairingRemoteTapHaptic: SystemSound { all[313] }
+    public static var buddyPairingRemoteTapHaptic: SystemSound { all[318] }
 
     /// `1490` · `/System/Library/Audio/UISounds/nano/QB_Dictation_Off_Haptic.caf` · QB_Dictation_Off_Haptic
     ///
     /// Confidence: medium.
-    public static var qbDictationOffHaptic: SystemSound { all[314] }
+    public static var qbDictationOffHaptic: SystemSound { all[319] }
 
     /// `1491` · `/System/Library/Audio/UISounds/nano/RingtoneDucked_US_Haptic.caf` · RingtoneDucked_US_Haptic
     ///
     /// Confidence: medium.
-    public static var ringtoneDuckedUSHaptic: SystemSound { all[315] }
+    public static var ringtoneDuckedUSHaptic: SystemSound { all[320] }
 
     /// `1492` · `/System/Library/Audio/UISounds/nano/RingtoneDucked_UK_Haptic.caf` · RingtoneDucked_UK_Haptic
     ///
     /// Confidence: medium.
-    public static var ringtoneDuckedUKHaptic: SystemSound { all[316] }
+    public static var ringtoneDuckedUKHaptic: SystemSound { all[321] }
 
     /// `1493` · `/System/Library/Audio/UISounds/nano/SalientNotification_Haptic.caf` · SalientNotification_Haptic
     ///
     /// Confidence: medium.
-    public static var salientNotificationHaptic: SystemSound { all[317] }
+    public static var salientNotificationHaptic: SystemSound { all[322] }
 
     /// `1494` · `/System/Library/Audio/UISounds/nano/Notification_Salient_Haptic.caf` · Notification_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var notificationSalientHaptic: SystemSound { all[318] }
+    public static var notificationSalientHaptic: SystemSound { all[323] }
 
     /// `1495` · `/System/Library/Audio/UISounds/nano/ET_BeginNotification_Salient_Haptic.caf` · ET_BeginNotification_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var etBeginNotificationSalientHaptic: SystemSound { all[319] }
+    public static var etBeginNotificationSalientHaptic: SystemSound { all[324] }
 
     /// `1496` · `/System/Library/Audio/UISounds/nano/Alert_Calendar_Salient_Haptic.caf` · Alert_Calendar_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertCalendarSalientHaptic: SystemSound { all[320] }
+    public static var alertCalendarSalientHaptic: SystemSound { all[325] }
 
     /// `1497` · `/System/Library/Audio/UISounds/nano/Notification_Salient_Haptic.caf` · Alert_Mail_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMailSalientHaptic: SystemSound { all[321] }
+    public static var alertMailSalientHaptic: SystemSound { all[326] }
 
     /// `1498` · `/System/Library/Audio/UISounds/nano/Notification_Salient_Haptic.caf` · Alert_Messages_1_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertMessages1SalientHaptic: SystemSound { all[322] }
+    public static var alertMessages1SalientHaptic: SystemSound { all[327] }
 
     /// `1499` · `/System/Library/Audio/UISounds/nano/Alert_ReminderDue_Salient_Haptic.caf` · Alert_ReminderDue_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertReminderDueSalientHaptic: SystemSound { all[323] }
+    public static var alertReminderDueSalientHaptic: SystemSound { all[328] }
 
     /// `1500` · `/System/Library/Audio/UISounds/nano/Notification_Salient_Haptic.caf` · Alert_Voicemail_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertVoicemailSalientHaptic: SystemSound { all[324] }
+    public static var alertVoicemailSalientHaptic: SystemSound { all[329] }
 
     /// `1501` · `/System/Library/Audio/UISounds/nano/Alert_3rdParty_Salient_Haptic.caf` · Alert_3rdParty_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alert3rdPartySalientHaptic: SystemSound { all[325] }
+    public static var alert3rdPartySalientHaptic: SystemSound { all[330] }
 
     /// `1502` · `/System/Library/Audio/UISounds/nano/3rdParty_DirectionUp_Haptic.caf` · 3rdParty_DirectionUp_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartyDirectionUpHaptic: SystemSound { all[326] }
+    public static var sound3rdPartyDirectionUpHaptic: SystemSound { all[331] }
 
     /// `1503` · `/System/Library/Audio/UISounds/nano/3rdParty_DirectionDown_Haptic.caf` · 3rdParty_DirectionDown_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartyDirectionDownHaptic: SystemSound { all[327] }
+    public static var sound3rdPartyDirectionDownHaptic: SystemSound { all[332] }
 
     /// `1504` · `/System/Library/Audio/UISounds/nano/3rdParty_Success_Haptic.caf` · 3rdParty_Success_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartySuccessHaptic: SystemSound { all[328] }
+    public static var sound3rdPartySuccessHaptic: SystemSound { all[333] }
 
     /// `1505` · `/System/Library/Audio/UISounds/nano/3rdParty_Failure_Haptic.caf` · 3rdParty_Failure_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartyFailureHaptic: SystemSound { all[329] }
+    public static var sound3rdPartyFailureHaptic: SystemSound { all[334] }
 
     /// `1506` · `/System/Library/Audio/UISounds/nano/3rdParty_Retry_Haptic.caf` · 3rdParty_Retry_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartyRetryHaptic: SystemSound { all[330] }
+    public static var sound3rdPartyRetryHaptic: SystemSound { all[335] }
 
     /// `1507` · `/System/Library/Audio/UISounds/nano/3rdParty_Start_Haptic.caf` · 3rdParty_Start_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartyStartHaptic: SystemSound { all[331] }
+    public static var sound3rdPartyStartHaptic: SystemSound { all[336] }
 
     /// `1508` · `/System/Library/Audio/UISounds/nano/3rdParty_Stop_Haptic.caf` · 3rdParty_Stop_Haptic
     ///
     /// Confidence: medium.
-    public static var sound3rdPartyStopHaptic: SystemSound { all[332] }
+    public static var sound3rdPartyStopHaptic: SystemSound { all[337] }
 
     /// `1509` · `/System/Library/Audio/UISounds/nano/Alarm_Nightstand_Haptic.caf` · Alarm_Nightstand_Haptic
     ///
     /// Confidence: medium.
-    public static var alarmNightstandHaptic: SystemSound { all[333] }
+    public static var alarmNightstandHaptic: SystemSound { all[338] }
 
     /// `1510` · `/System/Library/Audio/UISounds/nano/Alert_BatteryLow_5p_Salient_Haptic.caf` · Alert_BatteryCritical_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertBatteryCriticalSalientHaptic: SystemSound { all[334] }
+    public static var alertBatteryCriticalSalientHaptic: SystemSound { all[339] }
 
     /// `1511` · `/System/Library/Audio/UISounds/nano/NavigationLeftTurn_Salient_Haptic.caf` · NavigationLeftTurn_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var navigationLeftTurnSalientHaptic: SystemSound { all[335] }
+    public static var navigationLeftTurnSalientHaptic: SystemSound { all[340] }
 
     /// `1512` · `/System/Library/Audio/UISounds/nano/NavigationRightTurn_Salient_Haptic.caf` · NavigationRightTurn_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var navigationRightTurnSalientHaptic: SystemSound { all[336] }
+    public static var navigationRightTurnSalientHaptic: SystemSound { all[341] }
 
     /// `1513` · `/System/Library/Audio/UISounds/nano/NavigationGenericManeuver_Salient_Haptic.caf` · NavigationGenericManeuver_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var navigationGenericManeuverSalientHaptic: SystemSound { all[337] }
+    public static var navigationGenericManeuverSalientHaptic: SystemSound { all[342] }
 
     /// `1514` · `/System/Library/Audio/UISounds/nano/SedentaryTimer_Salient_Haptic.caf` · SedentaryTimer_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var sedentaryTimerSalientHaptic: SystemSound { all[338] }
+    public static var sedentaryTimerSalientHaptic: SystemSound { all[343] }
 
     /// `1515` · `/System/Library/Audio/UISounds/nano/Alert_ActivityGoalAttained_Salient_Haptic.caf` · Alert_ActivityGoalAttained_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertActivityGoalAttainedSalientHaptic: SystemSound { all[339] }
+    public static var alertActivityGoalAttainedSalientHaptic: SystemSound { all[344] }
 
     /// `1516` · `/System/Library/Audio/UISounds/nano/Alert_ActivityGoalBehind_Salient_Haptic.caf` · Alert_ActivityGoalBehind_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertActivityGoalBehindSalientHaptic: SystemSound { all[340] }
+    public static var alertActivityGoalBehindSalientHaptic: SystemSound { all[345] }
 
     /// `1517` · `/System/Library/Audio/UISounds/nano/Alert_PassbookGeofence_Salient_Haptic.caf` · Alert_PassbookGeofence_Salient_Haptic
     ///
     /// Confidence: medium.
-    public static var alertPassbookGeofenceSalientHaptic: SystemSound { all[341] }
+    public static var alertPassbookGeofenceSalientHaptic: SystemSound { all[346] }
 
     /// `1518` · `/System/Library/Audio/UISounds/nano/WorkoutSaved_Haptic.caf` · WorkoutSaved_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutSavedHaptic: SystemSound { all[342] }
+    public static var workoutSavedHaptic: SystemSound { all[347] }
 
     /// `1519` · OrbPeek_Haptic
     ///
     /// Confidence: medium.
-    public static var orbPeekHaptic: SystemSound { all[343] }
+    public static var orbPeekHaptic: SystemSound { all[348] }
 
     /// `1520` · OrbPop_Haptic
     ///
     /// Confidence: medium.
-    public static var orbPopHaptic: SystemSound { all[344] }
+    public static var orbPopHaptic: SystemSound { all[349] }
 
     /// `1521` · OrbNegative_Haptic
     ///
     /// Confidence: medium.
-    public static var orbNegativeHaptic: SystemSound { all[345] }
+    public static var orbNegativeHaptic: SystemSound { all[350] }
 
     /// `1522` · `/System/Library/Audio/UISounds/nano/VoiceOver_Click_Haptic.caf` · VoiceOver_Click_Haptic
     ///
     /// Confidence: medium.
-    public static var voiceOverClickHaptic: SystemSound { all[346] }
+    public static var voiceOverClickHaptic: SystemSound { all[351] }
 
     /// `1523` · `/System/Library/Audio/UISounds/nano/SiriAutoSend_Haptic.caf` · SiriAutoSend_Haptic
     ///
     /// Confidence: medium.
-    public static var siriAutoSendHaptic: SystemSound { all[347] }
+    public static var siriAutoSendHaptic: SystemSound { all[352] }
 
     /// `1524` · HummingbirdCycle_Haptic
     ///
     /// Confidence: medium.
-    public static var hummingbirdCycleHaptic: SystemSound { all[348] }
+    public static var hummingbirdCycleHaptic: SystemSound { all[353] }
 
     /// `1525` · `/System/Library/Audio/UISounds/nano/HummingbirdCompletion_Haptic.caf` · HummingbirdCompletion_Haptic
     ///
     /// Confidence: medium.
-    public static var hummingbirdCompletionHaptic: SystemSound { all[349] }
+    public static var hummingbirdCompletionHaptic: SystemSound { all[354] }
 
     /// `1526` · `/System/Library/Audio/UISounds/nano/HummingbirdNotification_Haptic.caf` · HummingbirdNotification_Haptic
     ///
     /// Confidence: medium.
-    public static var hummingbirdNotificationHaptic: SystemSound { all[350] }
+    public static var hummingbirdNotificationHaptic: SystemSound { all[355] }
 
     /// `1527` · `/System/Library/Audio/UISounds/nano/RemoteCameraShutterBurstBegin_Haptic.caf` · RemoteCameraShutterBurstBegin_Haptic
     ///
     /// Confidence: medium.
-    public static var remoteCameraShutterBurstBeginHaptic: SystemSound { all[351] }
+    public static var remoteCameraShutterBurstBeginHaptic: SystemSound { all[356] }
 
     /// `1528` · `/System/Library/Audio/UISounds/nano/RemoteCameraShutterBurstEnd_Haptic.caf` · RemoteCameraShutterBurstEnd_Haptic
     ///
     /// Confidence: medium.
-    public static var remoteCameraShutterBurstEndHaptic: SystemSound { all[352] }
+    public static var remoteCameraShutterBurstEndHaptic: SystemSound { all[357] }
 
     /// `1529` · `/System/Library/Audio/UISounds/nano/WorkoutPaused_Haptic.caf` · WorkoutPaused_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutPausedHaptic: SystemSound { all[353] }
+    public static var workoutPausedHaptic: SystemSound { all[358] }
 
     /// `1530` · `/System/Library/Audio/UISounds/nano/WorkoutResumed_Haptic.caf` · WorkoutResumed_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutResumedHaptic: SystemSound { all[354] }
+    public static var workoutResumedHaptic: SystemSound { all[359] }
 
     /// `1531` · `/System/Library/Audio/UISounds/nano/GoToSleep_Haptic.caf` · GoToSleep_Haptic
     ///
     /// Confidence: medium.
-    public static var goToSleepHaptic: SystemSound { all[355] }
+    public static var goToSleepHaptic: SystemSound { all[360] }
 
     /// `1532` · `/System/Library/Audio/UISounds/nano/Warsaw_Haptic.caf` · Warsaw_Haptic
     ///
     /// Confidence: medium.
-    public static var warsawHaptic: SystemSound { all[356] }
+    public static var warsawHaptic: SystemSound { all[361] }
 
     /// `1533` · `/System/Library/Audio/UISounds/nano/AutoUnlock_Haptic.caf` · AutoUnlock_Haptic
     ///
     /// Confidence: medium.
-    public static var autoUnlockHaptic: SystemSound { all[357] }
+    public static var autoUnlockHaptic: SystemSound { all[362] }
 
     /// `1534` · `/System/Library/Audio/UISounds/nano/Alert_ActivityFriendsGoalAttained_Haptic.caf` · Alert_ActivityFriendsGoalAttained_Haptic
     ///
     /// Confidence: medium.
-    public static var alertActivityFriendsGoalAttainedHaptic: SystemSound { all[358] }
+    public static var alertActivityFriendsGoalAttainedHaptic: SystemSound { all[363] }
 
     /// `1535` · `/System/Library/Audio/UISounds/nano/Alert_SpartanConnecting_Haptic.caf` · Alert_SpartanConnecting_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanConnectingHaptic: SystemSound { all[359] }
+    public static var alertSpartanConnectingHaptic: SystemSound { all[364] }
 
     /// `1536` · `/System/Library/Audio/UISounds/nano/Alert_SpartanConnecting_LowLatency_Haptic.caf` · Alert_SpartanConnecting_LowLatency_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanConnectingLowLatencyHaptic: SystemSound { all[360] }
+    public static var alertSpartanConnectingLowLatencyHaptic: SystemSound { all[365] }
 
     /// `1537` · `/System/Library/Audio/UISounds/nano/Alert_SpartanConnected_LowLatency_Haptic.caf` · Alert_SpartanConnected_LowLatency_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanConnectedLowLatencyHaptic: SystemSound { all[361] }
+    public static var alertSpartanConnectedLowLatencyHaptic: SystemSound { all[366] }
 
     /// `1538` · `/System/Library/Audio/UISounds/nano/Alert_SpartanDisconnected_LowLatency_Haptic.caf` · Alert_SpartanDisconnected_LowLatency_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanDisconnectedLowLatencyHaptic: SystemSound { all[362] }
+    public static var alertSpartanDisconnectedLowLatencyHaptic: SystemSound { all[367] }
 
     /// `1539` · Alert_SpartanReminderEscalationLevel1_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanReminderEscalationLevel1Haptic: SystemSound { all[363] }
+    public static var alertSpartanReminderEscalationLevel1Haptic: SystemSound { all[368] }
 
     /// `1540` · Alert_SpartanReminderEscalationLevel2_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanReminderEscalationLevel2Haptic: SystemSound { all[364] }
+    public static var alertSpartanReminderEscalationLevel2Haptic: SystemSound { all[369] }
 
     /// `1541` · Alert_SpartanReminderEscalationLevel3_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanReminderEscalationLevel3Haptic: SystemSound { all[365] }
+    public static var alertSpartanReminderEscalationLevel3Haptic: SystemSound { all[370] }
 
     /// `1542` · Alert_SpartanReminderEscalationLevel4_Haptic
     ///
     /// Confidence: medium.
-    public static var alertSpartanReminderEscalationLevel4Haptic: SystemSound { all[366] }
+    public static var alertSpartanReminderEscalationLevel4Haptic: SystemSound { all[371] }
 
     /// `1543` · `/System/Library/Audio/UISounds/nano/AccessScanComplete_Haptic.caf` · AccessScanComplete_Haptic
     ///
     /// Confidence: medium.
-    public static var accessScanCompleteHaptic: SystemSound { all[367] }
+    public static var accessScanCompleteHaptic: SystemSound { all[372] }
 
     /// `1544` · `/System/Library/Audio/UISounds/nano/BuddyMigrationStart_Haptic.caf` · BuddyMigrationStart_Haptic
     ///
     /// Confidence: medium.
-    public static var buddyMigrationStartHaptic: SystemSound { all[368] }
+    public static var buddyMigrationStartHaptic: SystemSound { all[373] }
 
     /// `1545` · `/System/Library/Audio/UISounds/nano/SOSFallDetectionPrompt_Haptic.caf` · SOSFallDetectionPrompt_Haptic
     ///
     /// Confidence: medium.
-    public static var sosFallDetectionPromptHaptic: SystemSound { all[369] }
+    public static var sosFallDetectionPromptHaptic: SystemSound { all[374] }
 
     /// `1546` · `/System/Library/Audio/UISounds/nano/SOSEmergencyContactTextPrompt_Haptic.caf` · SOSEmergencyContactTextPrompt_Haptic
     ///
     /// Confidence: medium.
-    public static var sosEmergencyContactTextPromptHaptic: SystemSound { all[370] }
+    public static var sosEmergencyContactTextPromptHaptic: SystemSound { all[375] }
 
     /// `1547` · `/System/Library/Audio/UISounds/nano/WorkoutStartAutodetect.caf` · WorkoutStartAutoDetected_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutStartAutoDetectedHaptic: SystemSound { all[371] }
+    public static var workoutStartAutoDetectedHaptic: SystemSound { all[376] }
 
     /// `1548` · `/System/Library/Audio/UISounds/nano/WorkoutCompleteAutodetect.caf` · WorkoutCompleteAutoDetected_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutCompleteAutoDetectedHaptic: SystemSound { all[372] }
+    public static var workoutCompleteAutoDetectedHaptic: SystemSound { all[377] }
 
     /// `1549` · `/System/Library/Audio/UISounds/nano/WorkoutPausedAutoDetect.caf` · WorkoutPausedAutoDetected_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutPausedAutoDetectedHaptic: SystemSound { all[373] }
+    public static var workoutPausedAutoDetectedHaptic: SystemSound { all[378] }
 
     /// `1550` · `/System/Library/Audio/UISounds/nano/WorkoutResumedAutoDetect.caf` · WorkoutResumedAutoDetected_Haptic
     ///
     /// Confidence: medium.
-    public static var workoutResumedAutoDetectedHaptic: SystemSound { all[374] }
+    public static var workoutResumedAutoDetectedHaptic: SystemSound { all[379] }
 
     /// `1551` · `/System/Library/Audio/UISounds/nano/WorkoutPaceAbove.caf` · Alert_PaceAbove_Haptic
     ///
     /// Confidence: medium.
-    public static var alertPaceAboveHaptic: SystemSound { all[375] }
+    public static var alertPaceAboveHaptic: SystemSound { all[380] }
 
     /// `1552` · `/System/Library/Audio/UISounds/nano/WorkoutPaceBelow.caf` · Alert_PaceBelow_Haptic
     ///
     /// Confidence: medium.
-    public static var alertPaceBelowHaptic: SystemSound { all[376] }
+    public static var alertPaceBelowHaptic: SystemSound { all[381] }
 
     /// `1553` · `/System/Library/Audio/UISounds/nano/WalkieTalkieReceiveStart_Haptic.caf` · WalkieTalkieReceiveStart_Haptic
     ///
     /// Confidence: medium.
-    public static var walkieTalkieReceiveStartHaptic: SystemSound { all[377] }
+    public static var walkieTalkieReceiveStartHaptic: SystemSound { all[382] }
 
     /// `1554` · `/System/Library/Audio/UISounds/nano/WalkieTalkieReceiveEnd_Haptic.caf` · WalkieTalkieReceiveEnd_Haptic
     ///
     /// Confidence: medium.
-    public static var walkieTalkieReceiveEndHaptic: SystemSound { all[378] }
+    public static var walkieTalkieReceiveEndHaptic: SystemSound { all[383] }
 
     /// `1555` · `/System/Library/Audio/UISounds/nano/Alert_Health_Haptic.caf` · Alert_Health_Haptic
     ///
     /// Confidence: medium.
-    public static var alertHealthHaptic: SystemSound { all[379] }
+    public static var alertHealthHaptic: SystemSound { all[384] }
 
     /// `1556` · `/System/Library/Audio/UISounds/nano/MultiwayJoin.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMultiwayJoin1556: SystemSound { all[380] }
+    public static var inCallSystemSoundMultiwayJoin1556: SystemSound { all[385] }
 
     /// `1557` · `/System/Library/Audio/UISounds/nano/MultiwayLeave.caf` · InCallSystemSound
     ///
     /// Confidence: medium.
-    public static var inCallSystemSoundMultiwayLeave1557: SystemSound { all[381] }
+    public static var inCallSystemSoundMultiwayLeave1557: SystemSound { all[386] }
 
     /// `1558` · `/System/Library/Audio/UISounds/nano/MultiwayInvitation.caf` · Alert_VCGroupInvitation_Haptic
     ///
     /// Confidence: medium.
-    public static var alertVCGroupInvitationHaptic: SystemSound { all[382] }
+    public static var alertVCGroupInvitationHaptic: SystemSound { all[387] }
 
     /// `1559` · `/System/Library/Audio/UISounds/nano/3rd_Party_Critical_Haptic.caf` · Alert_Critical_Haptic
     ///
     /// Confidence: medium.
-    public static var alertCriticalHaptic: SystemSound { all[383] }
+    public static var alertCriticalHaptic: SystemSound { all[388] }
 
     /// `1560` · `/System/Library/Audio/UISounds/nano/Alert_1stParty_Haptic.caf` · Alert_FirstParty_Haptic
     ///
     /// Confidence: medium.
-    public static var alertFirstPartyHaptic: SystemSound { all[384] }
+    public static var alertFirstPartyHaptic: SystemSound { all[389] }
 
     /// `1561` · `/System/Library/Audio/UISounds/nano/HealthNotificationUrgent.caf` · Alert_HealthNotificationUrgent_Haptic
     ///
     /// Confidence: medium.
-    public static var alertHealthNotificationUrgentHaptic: SystemSound { all[385] }
+    public static var alertHealthNotificationUrgentHaptic: SystemSound { all[390] }
 
     /// `1562` · Alert_Limit_Exceeded_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var alertLimitExceededHaptic: SystemSound { all[386] }
+    public static var alertLimitExceededHaptic: SystemSound { all[391] }
 
     /// `1563` · `/System/Library/Audio/UISounds/nano/Siren_Countdown_Major_Haptic.caf` · Siren_Countdown_Major_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var sirenCountdownMajorHaptic: SystemSound { all[387] }
+    public static var sirenCountdownMajorHaptic: SystemSound { all[392] }
 
     /// `1564` · `/System/Library/Audio/UISounds/nano/Siren_Countdown_Minor_Haptic.caf` · Siren_Countdown_Minor_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var sirenCountdownMinorHaptic: SystemSound { all[388] }
+    public static var sirenCountdownMinorHaptic: SystemSound { all[393] }
 
     /// `1565` · SunlightPrompt_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var sunlightPromptHaptic: SystemSound { all[389] }
+    public static var sunlightPromptHaptic: SystemSound { all[394] }
 
     /// `1566` · `/System/Library/Audio/UISounds/nano/Doorbell_Haptic.caf` · Doorbell_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var doorbellHaptic: SystemSound { all[390] }
+    public static var doorbellHaptic: SystemSound { all[395] }
 
     /// `1567` · `/System/Library/Audio/UISounds/nano/System_Notification_Haptic.caf` · System_Notification_Haptic
     ///
     /// Confidence: medium.
-    public static var systemNotificationHaptic: SystemSound { all[391] }
+    public static var systemNotificationHaptic: SystemSound { all[396] }
 
     /// `1568` · `/System/Library/Audio/UISounds/nano/SOSFallDetectionPromptEscalation_Haptic.caf` · SOSFallDetectionPromptEscalation_Haptic
     ///
     /// Confidence: medium.
-    public static var sosFallDetectionPromptEscalationHaptic: SystemSound { all[392] }
+    public static var sosFallDetectionPromptEscalationHaptic: SystemSound { all[397] }
 
     /// `1569` · WalkAMile_Haptic
     ///
     /// Confidence: medium.
-    public static var walkAMileHaptic: SystemSound { all[393] }
+    public static var walkAMileHaptic: SystemSound { all[398] }
 
     /// `1570` · `/System/Library/Audio/UISounds/nano/HealthReadingComplete_Haptic.caf` · HealthReadingComplete_Haptic
     ///
     /// Confidence: medium.
-    public static var healthReadingCompleteHaptic: SystemSound { all[394] }
+    public static var healthReadingCompleteHaptic: SystemSound { all[399] }
 
     /// `1571` · `/System/Library/Audio/UISounds/nano/HealthReadingFail_Haptic.caf` · HealthReadingFail_Haptic
     ///
     /// Confidence: medium.
-    public static var healthReadingFailHaptic: SystemSound { all[395] }
+    public static var healthReadingFailHaptic: SystemSound { all[400] }
 
     /// `1572` · `/System/Library/Audio/UISounds/nano/HeadphoneAudioExposureLimitExceeded.caf` · HeadphoneAudioExposureLimitExceeded_Haptic
     ///
     /// Confidence: medium.
-    public static var headphoneAudioExposureLimitExceededHaptic: SystemSound { all[396] }
+    public static var headphoneAudioExposureLimitExceededHaptic: SystemSound { all[401] }
 
     /// `1573` · `/System/Library/Audio/UISounds/nano/ScreenCapture.caf` · CameraShutter_Haptic
     ///
     /// Confidence: medium.
-    public static var cameraShutterHapticScreenCapture: SystemSound { all[397] }
+    public static var cameraShutterHapticScreenCapture: SystemSound { all[402] }
 
     /// `1574` · Time_To_Run_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var timeToRunHaptic: SystemSound { all[398] }
+    public static var timeToRunHaptic: SystemSound { all[403] }
 
     /// `1575` · Time_To_Walk_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var timeToWalkHaptic: SystemSound { all[399] }
+    public static var timeToWalkHaptic: SystemSound { all[404] }
 
     /// `1576` · `/System/Library/Audio/UISounds/nano/PushToTalkJoined.caf` · PushToTalkJoined_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkJoinedHaptic: SystemSound { all[400] }
+    public static var pushToTalkJoinedHaptic: SystemSound { all[405] }
 
     /// `1577` · `/System/Library/Audio/UISounds/nano/PushToTalkLeft.caf` · PushToTalkLeft_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkLeftHaptic: SystemSound { all[401] }
+    public static var pushToTalkLeftHaptic: SystemSound { all[406] }
 
     /// `1578` · `/System/Library/Audio/UISounds/nano/PushToTalkUnmute.caf` · PushToTalkUnmute_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkUnmuteHaptic: SystemSound { all[402] }
+    public static var pushToTalkUnmuteHaptic: SystemSound { all[407] }
 
     /// `1579` · `/System/Library/Audio/UISounds/nano/PushToTalkMute.caf` · PushToTalkMute_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkMuteHaptic: SystemSound { all[403] }
+    public static var pushToTalkMuteHaptic: SystemSound { all[408] }
 
     /// `1580` · `/System/Library/Audio/UISounds/nano/PushToTalkUnmuteFail.caf` · PushToTalkUnmuteFail_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var pushToTalkUnmuteFailHaptic: SystemSound { all[404] }
+    public static var pushToTalkUnmuteFailHaptic: SystemSound { all[409] }
 
     /// `1581` · `/System/Library/Audio/UISounds/nano/WorkoutPrecisionStart_Haptic.caf` · WorkoutPrecisionStart_Haptic
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var workoutPrecisionStartHaptic: SystemSound { all[405] }
+    public static var workoutPrecisionStartHaptic: SystemSound { all[410] }
 
     /// `1582` · `/System/Library/Audio/UISounds/nano/IntervalEnded.caf` · Alert_IntervalEnded_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var alertIntervalEndedHaptic: SystemSound { all[406] }
+    public static var alertIntervalEndedHaptic: SystemSound { all[411] }
 
     /// `1583` · `/System/Library/Audio/UISounds/nano/IntervalUpcoming.caf` · Alert_IntervalUpcoming_Haptic
     ///
     /// Confidence: medium. Available since iOS 16.2.
     @available(iOS 16.2, *)
-    public static var alertIntervalUpcomingHaptic: SystemSound { all[407] }
+    public static var alertIntervalUpcomingHaptic: SystemSound { all[412] }
 
     /// `1584` · `/System/Library/Audio/UISounds/nano/Elevation.caf` · Elevation_Alert_Haptic
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var elevationAlertHaptic: SystemSound { all[408] }
+    public static var elevationAlertHaptic: SystemSound { all[413] }
 
     /// `1585` · `/System/Library/Audio/UISounds/nano/SenderConfirmation.caf` · IDCard_Sender_Confirmation_Haptic
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var idCardSenderConfirmationHaptic: SystemSound { all[409] }
+    public static var idCardSenderConfirmationHaptic: SystemSound { all[414] }
 
     /// `1586` · `/System/Library/Audio/UISounds/nano/ReceiverConfirmation.caf` · IDCard_Receiver_Confirmation_Haptic
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var idCardReceiverConfirmationHaptic: SystemSound { all[410] }
+    public static var idCardReceiverConfirmationHaptic: SystemSound { all[415] }
 
     /// `1587` · `/System/Library/Audio/UISounds/nano/ReceiverConnect.caf` · IDCard_Receiver_Connect_Haptic
     ///
     /// Confidence: medium. Available since iOS 17.0.
     @available(iOS 17.0, *)
-    public static var idCardReceiverConnectHaptic: SystemSound { all[411] }
+    public static var idCardReceiverConnectHaptic: SystemSound { all[416] }
 
     /// `1588` · `/System/Library/Audio/UISounds/nano/RegattaTimer.caf`
     ///
     /// Confidence: medium. Available since iOS 18.0.
     @available(iOS 18.0, *)
-    public static var regattaTimer: SystemSound { all[412] }
+    public static var regattaTimer: SystemSound { all[417] }
 
     /// `1589` · `/System/Library/Audio/UISounds/nano/SatelliteMessageSent.caf` · Satellite_Message_Sent_Haptic
     ///
     /// Confidence: medium. Available since iOS 26.0.
     @available(iOS 26.0, *)
-    public static var satelliteMessageSentHaptic: SystemSound { all[413] }
+    public static var satelliteMessageSentHaptic: SystemSound { all[418] }
 
     /// `3100` · AudioPrewarm
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var audioPrewarm: SystemSound { all[414] }
+    public static var audioPrewarm: SystemSound { all[419] }
 
     /// `3101` · HapticPrewarm
     ///
     /// Confidence: medium. Available since iOS 16.0.
     @available(iOS 16.0, *)
-    public static var hapticPrewarm: SystemSound { all[415] }
+    public static var hapticPrewarm: SystemSound { all[420] }
 
     /// `4095` · Vibrate
     ///
     /// Confidence: high.
-    public static var vibrate: SystemSound { all[416] }
+    public static var vibrate: SystemSound { all[421] }
 
     /// `4096` · UserAlert
     ///
     /// Confidence: medium.
-    public static var userAlert: SystemSound { all[417] }
+    public static var userAlert: SystemSound { all[422] }
 }

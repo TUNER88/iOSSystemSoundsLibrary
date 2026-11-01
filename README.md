@@ -347,7 +347,7 @@ Collected on iOS 7. Unofficial, and may differ on other iOS versions.
 
 ## SystemSoundIDs added after iOS 7
 
-293 IDs that aren't in the iOS 7 table above. Mappings and minimum versions come from [p-x9](https://github.com/p-x9/swift-system-sound/blob/e3f44c2d5766b0a7c3cdaacd4d61b5e1c8804794/SystemSoundTable.md) (MIT, iOS 16–26.0). Files were checked against the iOS 26 file list. Like everything here, they are unofficial, so test on a device. "≤ 16" means the ID existed in iOS 16 or earlier. The source data is in [`data/sounds.json`](data/sounds.json).
+298 IDs that aren't in the iOS 7 table above. Mappings and minimum versions come from [p-x9](https://github.com/p-x9/swift-system-sound/blob/46a556c57d32cbae13ee2023c599bc6efcb628a6/SystemSoundTable.md) (MIT, iOS 16–27.0; iOS 27 IDs from [p-x9/swift-system-sound#16](https://github.com/p-x9/swift-system-sound/pull/16)). Files were checked against the iOS 26 and iOS 27 file lists. Like everything here, they are unofficial, so test on a device. "≤ 16" means the ID existed in iOS 16 or earlier. The source data is in [`data/sounds.json`](data/sounds.json).
 
 | SystemSoundID | File name | Folder | Category | Min iOS | Confidence |
 | --- | --- | --- | --- | --- | --- |
@@ -361,6 +361,7 @@ Collected on iOS 7. Unofficial, and may differ on other iOS versions.
 | 37 | ringback_tone_hk.caf | nano | InCallSystemSound | ≤ 16 | medium |
 | 38 | ringback_tone_aus.caf | nano | InCallSystemSound | ≤ 16 | medium |
 | 39 | ringback_tone_uk.caf | nano | InCallSystemSound | ≤ 16 | medium |
+| 40 | call_waiting_tone_low_priority.caf | nano | InCallSystemSound | 27.0 | medium |
 | 1017 | alarm.caf | (root) | ReminderAlert | ≤ 16 | medium |
 | 1018 | Swish.caf | (root) | MailSent | ≤ 16 | medium |
 | 1060 | WebcamStart.caf | (root) | WebcamStartAlwaysHeard | 16.0 | medium |
@@ -399,6 +400,9 @@ Collected on iOS 7. Unofficial, and may differ on other iOS versions.
 | 1169 | EarInteraction_Complete.caf | (root) | EarInteraction_Complete | 18.1 | medium |
 | 1174 | - | - | Time_To_Run | 16.0 | medium |
 | 1175 | - | - | Time_To_Walk | 16.0 | medium |
+| 1176 | GymKitConnecting.caf | (root) | GymKit | 27.0 | medium |
+| 1177 | GymKitConnected.caf | (root) | GymKit | 27.0 | medium |
+| 1178 | GymKitDisconnected.caf | (root) | GymKit | 27.0 | medium |
 | 1253 | DeviceShutdown.caf | (root) | DeviceShutdown | 16.0 | medium |
 | 1260 | camera_timer_final_second.caf | (root) | CameraShutterAlt | ≤ 16 | medium |
 | 1261 | camera_timer_countdown.caf | (root) | CameraShutterAlt | ≤ 16 | medium |
@@ -445,6 +449,7 @@ Collected on iOS 7. Unofficial, and may differ on other iOS versions.
 | 1372 | HeadGesturesDoubleShake.caf | nano | - | 18.0 | medium |
 | 1373 | HeadGesturesPartialNod.caf | nano | - | 18.0 | medium |
 | 1374 | HeadGesturesPartialShake.caf | nano | - | 18.0 | medium |
+| 1381 | - | - | HomeDeviceHourlyChime | 27.0 | medium |
 | 1390 | LiveTranslationStart.caf | (root) | PersonalTranslator | 26.0 | medium |
 | 1391 | LiveTranslationStop.caf | (root) | PersonalTranslator | 26.0 | medium |
 | 1392 | DualBudLongPressFailure.caf | (root) | PersonalTranslator | 26.0 | medium |
@@ -1339,7 +1344,7 @@ Collected on iOS 7. Unofficial, and may differ on other iOS versions.
 
 ## Changes since iOS 7
 
-Differences between the original iOS 7 data above (left unchanged) and recent iOS versions. Sources: [p-x9](https://github.com/p-x9/swift-system-sound/blob/e3f44c2d5766b0a7c3cdaacd4d61b5e1c8804794/SystemSoundTable.md) and the iOS 17–27 file lists in [`data/uisounds/`](data/uisounds/).
+Differences between the original iOS 7 data above (left unchanged) and recent iOS versions. Sources: [p-x9](https://github.com/p-x9/swift-system-sound/blob/46a556c57d32cbae13ee2023c599bc6efcb628a6/SystemSoundTable.md) and the iOS 17–27 file lists in [`data/uisounds/`](data/uisounds/).
 
 ### File mapping differs
 

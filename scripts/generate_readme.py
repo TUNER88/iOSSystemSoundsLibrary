@@ -26,7 +26,7 @@ TOC_LINES = [
     "- [List of all system audio files in iOS 27](#list-of-all-system-audio-files-in-ios-27)\n",
     "- [Changes since iOS 7](#changes-since-ios-7)\n",
 ]
-P9 = "[p-x9](https://github.com/p-x9/swift-system-sound/blob/e3f44c2d5766b0a7c3cdaacd4d61b5e1c8804794/SystemSoundTable.md)"
+P9 = "[p-x9](https://github.com/p-x9/swift-system-sound/blob/46a556c57d32cbae13ee2023c599bc6efcb628a6/SystemSoundTable.md)"
 BASE = "/System/Library/Audio/UISounds/"
 
 
@@ -47,7 +47,7 @@ def build():
     out += [
         "## SystemSoundIDs added after iOS 7",
         "",
-        f"{len(new)} IDs that aren't in the iOS 7 table above. Mappings and minimum versions come from {P9} (MIT, iOS 16–26.0). Files were checked against the iOS 26 file list. "
+        f"{len(new)} IDs that aren't in the iOS 7 table above. Mappings and minimum versions come from {P9} (MIT, iOS 16–27.0; iOS 27 IDs from [p-x9/swift-system-sound#16](https://github.com/p-x9/swift-system-sound/pull/16)). Files were checked against the iOS 26 and iOS 27 file lists. "
         "Like everything here, they are unofficial, so test on a device. \"≤ 16\" means the ID existed in iOS 16 or earlier. The source data is in [`data/sounds.json`](data/sounds.json).",
         "",
         "| SystemSoundID | File name | Folder | Category | Min iOS | Confidence |",

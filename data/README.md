@@ -4,7 +4,7 @@ Machine-readable catalog of iOS system sounds. It backs the README tables and th
 
 | File | Contents |
 | --- | --- |
-| `sounds.json` | 418 SystemSoundIDs: file, folder, category, minimum iOS, status, confidence, source |
+| `sounds.json` | 423 SystemSoundIDs: file, folder, category, minimum iOS, status, confidence, source |
 | `sounds.schema.json` | JSON Schema (draft 2020-12) for `sounds.json` |
 | `uisounds/ios-7.0.2.txt` | Files in `/System/Library/Audio/UISounds` on iOS 7.0.2 (the original README list) |
 | `uisounds/ios-{17,18,18.1,26,27}.txt` | Files in `/System/Library/Audio/UISounds` on later iOS versions |
@@ -19,7 +19,7 @@ Run `python3 scripts/validate_data.py` (needs `jsonschema`) to check the data. C
 | `name` | string | Stable lowerCamelCase identifier, used for generated Swift constants |
 | `file` | string or null | Sound file name. `null` = no file (vibration/haptic-only or unknown) |
 | `folder` | string or null | Sub-folder of `/System/Library/Audio/UISounds`: `""` (root), `New`, `Modern`, `nano` |
-| `path` | string or null | Full file path on recent iOS (checked against the iOS 26 file list) |
+| `path` | string or null | Full file path on recent iOS (checked against the iOS 27 file list) |
 | `category` | string or null | Internal category name |
 | `minIOS` | string or null | First iOS version with this ID (`"17.0"`). `null` = available before iOS 16 or unknown |
 | `status` | enum | `current`, `changed-since-ios7` (file or category differs from the iOS 7 table), `removed` |
@@ -33,7 +33,7 @@ None of this is documented by Apple. IDs and files can change between iOS versio
 ## Sources and attribution
 
 - **Original iOS 7 table and file list**: this repository's README (collected on iOS 7 / 7.0.2).
-- **p-x9/swift-system-sound**: the SystemSoundID → file/category mapping and the minimum iOS versions (up to iOS 26.0) come from [SystemSoundTable.md](https://github.com/p-x9/swift-system-sound/blob/e3f44c2d5766b0a7c3cdaacd4d61b5e1c8804794/SystemSoundTable.md) at commit `e3f44c2`, used under the MIT License:
+- **p-x9/swift-system-sound**: the SystemSoundID → file/category mapping and the minimum iOS versions (up to iOS 27.0) come from [SystemSoundTable.md](https://github.com/p-x9/swift-system-sound/blob/46a556c57d32cbae13ee2023c599bc6efcb628a6/SystemSoundTable.md) at commit `46a556c`, used under the MIT License. The iOS 27 IDs were added by @p-x9 in [p-x9/swift-system-sound#16](https://github.com/p-x9/swift-system-sound/pull/16) (thanks!):
 
 ```text
 MIT License
