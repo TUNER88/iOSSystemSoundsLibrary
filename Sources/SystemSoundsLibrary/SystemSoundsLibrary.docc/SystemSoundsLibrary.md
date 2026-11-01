@@ -17,7 +17,7 @@ The [iOSSystemSoundsLibrary](https://github.com/TUNER88/iOSSystemSoundsLibrary) 
 IDs and sound files, with copy-paste snippets for Swift, SwiftUI and Objective-C.
 
 If you'd rather use names than raw IDs, `SystemSoundsLibrary` wraps the same calls. It has a
-typed catalog of 418 known sounds, generated from `data/sounds.json`, with `@available`
+typed catalog of 423 known sounds, generated from `data/sounds.json`, with `@available`
 annotations for sounds added in newer iOS versions:
 
 ```swift

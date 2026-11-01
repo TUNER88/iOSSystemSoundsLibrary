@@ -28,7 +28,7 @@ private func loadSoundsFile() throws -> SoundsFile {
 struct CatalogTests {
     @Test func idsAndNamesAreUnique() {
         let all = SystemSound.all
-        #expect(all.count == 418)
+        #expect(all.count == 423)
         #expect(Set(all.map(\.id)).count == all.count)
         #expect(Set(all.map(\.name)).count == all.count)
         #expect(all.map(\.id) == all.map(\.id).sorted())

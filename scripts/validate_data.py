@@ -23,10 +23,10 @@ if len(names) != len(set(names)):
 if ids != sorted(ids):
     errors.append("sounds are not sorted by id")
 
-latest = set((ROOT / "data/uisounds/ios-26.txt").read_text().split())
+latest = set((ROOT / "data/uisounds/ios-27.txt").read_text().split())
 for s in sounds:
     if s["path"] and s["status"] != "removed" and s["path"] not in latest:
-        errors.append(f"{s['id']}: path {s['path']} not in data/uisounds/ios-26.txt")
+        errors.append(f"{s['id']}: path {s['path']} not in data/uisounds/ios-27.txt")
     if s["file"] and s["path"] and not s["path"].endswith("/" + s["file"]):
         errors.append(f"{s['id']}: path does not end with file name")
 

@@ -1,11 +1,11 @@
 {
   "$schema": "./sounds.schema.json",
   "version": 1,
-  "generated": "2026-10-18",
+  "generated": "2026-11-01",
   "sources": {
     "readme-ios7": "README.md \"List of SystemSoundIDs\" table (collected on iOS 7)",
-    "p-x9": "https://github.com/p-x9/swift-system-sound/blob/e3f44c2d5766b0a7c3cdaacd4d61b5e1c8804794/SystemSoundTable.md (MIT, Copyright (c) 2023 p-x9)",
-    "onj-dump": "https://3.onj.me/phonetones/unzipped/Apple/iOS-26/System/Library/Audio/UISounds/ (file exists in the iOS 26 filesystem dump)"
+    "p-x9": "https://github.com/p-x9/swift-system-sound/blob/46a556c57d32cbae13ee2023c599bc6efcb628a6/SystemSoundTable.md (MIT, Copyright (c) 2023 p-x9; iOS 27 additions from https://github.com/p-x9/swift-system-sound/pull/16)",
+    "onj-dump": "https://3.onj.me/phonetones/unzipped/Apple/ (file exists in the iOS 26 or iOS 27 filesystem dump)"
   },
   "sounds": [
     {
@@ -177,6 +177,23 @@
       ],
       "ios7": null,
       "notes": null
+    },
+    {
+      "id": 40,
+      "name": "inCallSystemSoundCallWaitingToneLowPriority",
+      "file": "call_waiting_tone_low_priority.caf",
+      "folder": "nano",
+      "path": "/System/Library/Audio/UISounds/nano/call_waiting_tone_low_priority.caf",
+      "category": "InCallSystemSound",
+      "minIOS": "27.0",
+      "status": "current",
+      "confidence": "medium",
+      "source": [
+        "p-x9",
+        "onj-dump"
+      ],
+      "ios7": null,
+      "notes": "Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16)."
     },
     {
       "id": 1000,
@@ -2307,6 +2324,57 @@
       "notes": null
     },
     {
+      "id": 1176,
+      "name": "gymKitConnecting",
+      "file": "GymKitConnecting.caf",
+      "folder": "",
+      "path": "/System/Library/Audio/UISounds/GymKitConnecting.caf",
+      "category": "GymKit",
+      "minIOS": "27.0",
+      "status": "current",
+      "confidence": "medium",
+      "source": [
+        "p-x9",
+        "onj-dump"
+      ],
+      "ios7": null,
+      "notes": "Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16)."
+    },
+    {
+      "id": 1177,
+      "name": "gymKitConnected",
+      "file": "GymKitConnected.caf",
+      "folder": "",
+      "path": "/System/Library/Audio/UISounds/GymKitConnected.caf",
+      "category": "GymKit",
+      "minIOS": "27.0",
+      "status": "current",
+      "confidence": "medium",
+      "source": [
+        "p-x9",
+        "onj-dump"
+      ],
+      "ios7": null,
+      "notes": "Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16)."
+    },
+    {
+      "id": 1178,
+      "name": "gymKitDisconnected",
+      "file": "GymKitDisconnected.caf",
+      "folder": "",
+      "path": "/System/Library/Audio/UISounds/GymKitDisconnected.caf",
+      "category": "GymKit",
+      "minIOS": "27.0",
+      "status": "current",
+      "confidence": "medium",
+      "source": [
+        "p-x9",
+        "onj-dump"
+      ],
+      "ios7": null,
+      "notes": "Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16)."
+    },
+    {
       "id": 1200,
       "name": "touchToneDtmf0",
       "file": "dtmf-0.caf",
@@ -4193,6 +4261,22 @@
       ],
       "ios7": null,
       "notes": null
+    },
+    {
+      "id": 1381,
+      "name": "homeDeviceHourlyChime",
+      "file": null,
+      "folder": null,
+      "path": null,
+      "category": "HomeDeviceHourlyChime",
+      "minIOS": "27.0",
+      "status": "current",
+      "confidence": "medium",
+      "source": [
+        "p-x9"
+      ],
+      "ios7": null,
+      "notes": "Added in iOS 27 according to p-x9/swift-system-sound#16 (https://github.com/p-x9/swift-system-sound/pull/16). No sound file is listed for this ID."
     },
     {
       "id": 1390,
